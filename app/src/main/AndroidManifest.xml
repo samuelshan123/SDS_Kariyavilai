@@ -12,8 +12,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Worshiptime"></activity>
-        <activity android:name=".Contacts" />
+        <activity android:name=".Worshiptime"
+            android:label="Worship Schedule"
+        />
+        <activity android:name=".Contacts"
+            android:label="Contacts"/>
         <activity
             android:name=".Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
