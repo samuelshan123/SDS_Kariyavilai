@@ -101,4 +101,9 @@ TextView textViewUsername;
         finish();
         SharedPrefManager.getInstance(getApplicationContext()).logout();
     }
+
+    public void contact(MenuItem item) {
+        Intent intent = new Intent(Dashboard.this,Contacts.class);
+        startActivity(intent);
+    }
 }
