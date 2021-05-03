@@ -30,18 +30,13 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:id="@+id/linear"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                tools:ignore="NotSibling">
+
 
                 <GridLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:columnCount="3"
-                    android:rowCount="4">
+                    android:rowCount="2">
 
                 <androidx.cardview.widget.CardView
 
@@ -69,13 +64,20 @@
                             android:layout_height="70dp"
                             android:src="@drawable/sds" />
 
-
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="About SDS"
+                            android:textColor="#6f6f6f"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
 
 
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:onClick="wortime"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_margin="12dp"
@@ -102,7 +104,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Testimony"
+                            android:text="Worship Time"
                             android:textColor="#6f6f6f"
                             android:textSize="15sp"
                             android:textStyle="bold" />
@@ -117,14 +119,12 @@
                     android:layout_height="100dp"
                     android:layout_margin="12dp"
                     android:background="#fff"
-
                     app:cardCornerRadius="20dp"
                     app:cardElevation="12dp"
 
                     >
 
                     <LinearLayout
-                        android:onClick="openFeeDetails"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:background="#fff"
@@ -152,7 +152,6 @@
                 </GridLayout>
             </LinearLayout>
 
-        </LinearLayout>
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_view"

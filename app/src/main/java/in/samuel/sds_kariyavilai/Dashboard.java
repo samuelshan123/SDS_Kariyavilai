@@ -106,4 +106,9 @@ TextView textViewUsername;
         Intent intent = new Intent(Dashboard.this,Contacts.class);
         startActivity(intent);
     }
+
+    public void wortime(View view) {
+        Intent intent = new Intent(Dashboard.this,Worshiptime.class);
+        startActivity(intent);
+    }
 }
