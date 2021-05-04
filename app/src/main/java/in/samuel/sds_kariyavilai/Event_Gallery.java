@@ -67,13 +67,15 @@ RequestQueue requestQueue;
         listView.setAdapter(listAdapter);
         Toast.makeText(getApplicationContext(), ("Loading Data Please wait......"), Toast.LENGTH_LONG).show();
 
-
+        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
             // making fresh volley request and getting json
             final JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET,
                     URL_FEED, null, new Response.Listener<JSONObject>() {
 
                 @Override
                 public void onResponse(JSONObject response) {
+                    progressBar.setVisibility(View.GONE);
                     VolleyLog.d(TAG, "Response: " + response.toString());
 
                     if (response != null) {
