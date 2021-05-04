@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.text.Html;
 import android.text.TextUtils;
+import android.text.format.DateUtils;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +15,8 @@ import android.widget.TextView;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.NetworkImageView;
 
+import java.security.Timestamp;
+import java.util.Date;
 import java.util.List;
 
 
@@ -21,7 +24,6 @@ public class FeedListAdapter extends BaseAdapter {
     private Activity activity;
     private LayoutInflater inflater;
     private List< in.samuel.sds_kariyavilai.FeedItem> feedItems;
-
     ImageLoader imageLoader = AppController.getInstance().getImageLoader();
 
     public FeedListAdapter(Activity activity, List< in.samuel.sds_kariyavilai.FeedItem> feedItems) {
@@ -71,7 +73,8 @@ public class FeedListAdapter extends BaseAdapter {
 
         name.setText(item.getName());
 
-        // Converting timestamp into x ago format
+
+        timestamp.setText(item.getTimeStamp());
 
         // Chcek for empty status message
         if (!TextUtils.isEmpty(item.getStatus())) {

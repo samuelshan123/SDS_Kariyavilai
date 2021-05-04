@@ -27,6 +27,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.Cache;
 import com.android.volley.Cache.Entry;
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request.Method;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -43,8 +44,8 @@ public class Event_Gallery extends Activity {
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
-    private String URL_FEED = "https://unbruised-dive.000webhostapp.com/sdseventgallery.json";
-
+    private String URL_FEED = "https://unbruised-dive.000webhostapp.com/SDS_serverCodes/sdseventgallery.json";
+RequestQueue requestQueue;
 
     @SuppressLint("NewApi")
     @Override
@@ -85,11 +86,16 @@ public class Event_Gallery extends Activity {
                 public void onErrorResponse(VolleyError error) {
                     VolleyLog.d(TAG, "Error: " + error.getMessage());
                 }
+
             });
 
             // Adding request to volley request queue
             AppController.getInstance().addToRequestQueue(jsonReq);
-        }
+
+    }
+
+
+
 
 
 
