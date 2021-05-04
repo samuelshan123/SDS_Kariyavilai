@@ -65,22 +65,13 @@ TextView textViewUsername;
                 startActivity(intent);
                 break;
 
-            case R.id.Feedback:
-                String url = "";
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
-                break;
-            case R.id.Admissions:
-                String url2 = "";
-                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url2)));
+
+            case R.id.aboutus:
+
                 break;
             case R.id.visit:
-                String link = "";
-                Uri uri1 = Uri.parse(link);
-                Intent in = new Intent(Intent.ACTION_VIEW, uri1);
-                if (in.resolveActivity(getPackageManager()) != null) {
-                    // Here we use an intent without a Chooser unlike the next example
-                    startActivity(in);
-                }
+                String link = "https://goo.gl/maps/QeD1TJqTG3bH2unt7";
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(link)));
                 break;
 
         }
@@ -109,6 +100,12 @@ TextView textViewUsername;
 
     public void wortime(View view) {
         Intent intent = new Intent(Dashboard.this,Worshiptime.class);
+        startActivity(intent);
+    }
+
+
+    public void eventgallery(View view) {
+        Intent intent = new Intent(Dashboard.this,Event_Gallery.class);
         startActivity(intent);
     }
 }

@@ -10,14 +10,14 @@
                 android:icon="@drawable/phone"
                 android:title="Contacts"
                 android:onClick="contact"/>
+
             <item
-                android:id="@+id/Feedback"
-                android:title="feedback" />
-            <item
-                android:id="@+id/Admissions"
-                android:title="About us" />
+                android:id="@+id/aboutus"
+                android:icon="@drawable/about"
+                android:title="About SDS" />
             <item
                 android:id="@+id/visit"
+                android:icon="@drawable/location"
                 android:title="visit us" />
 
     <item
