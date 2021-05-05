@@ -18,14 +18,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class AdminDashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
-TextView textViewUsername;
+    TextView textViewUsername;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dashboard);
+        setContentView(R.layout.activity_admin_dash_board);
 
+        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+            finish();
+            startActivity(new Intent(AdminDashBoard.this, Login.class));
+        }
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -38,13 +42,10 @@ TextView textViewUsername;
         drawer.addDrawerListener(toggle);
         toggle.syncState();
 
-        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class));
-        }
+
 
         //getting the current user
-        User user = SharedPrefManager.getInstance(this).getUser();
+        User user = SharedPrefManager.getInstance(AdminDashBoard.this).getUser();
 
         View headerView = navigationView.getHeaderView(0);
         TextView navUsername = (TextView) headerView.findViewById(R.id.textViewUsername);
@@ -95,18 +96,23 @@ TextView textViewUsername;
     }
 
     public void contact(MenuItem item) {
-        Intent intent = new Intent(Dashboard.this,Contacts.class);
+        Intent intent = new Intent(AdminDashBoard.this,Contacts.class);
         startActivity(intent);
     }
 
     public void wortime(View view) {
-        Intent intent = new Intent(Dashboard.this,Worshiptime.class);
+        Intent intent = new Intent(AdminDashBoard.this,Worshiptime.class);
         startActivity(intent);
     }
 
 
     public void eventgallery(View view) {
-        Intent intent = new Intent(Dashboard.this,Event_Gallery.class);
+        Intent intent = new Intent(AdminDashBoard.this,Event_Gallery.class);
+        startActivity(intent);
+    }
+
+    public void adminst(MenuItem item) {
+        Intent intent = new Intent(AdminDashBoard.this,AdminSettings.class);
         startActivity(intent);
     }
 }

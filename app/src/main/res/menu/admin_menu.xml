@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+
+    <item
+        android:id="@+id/Contacts"
+        android:icon="@drawable/phone"
+        android:title="Contacts"
+        android:onClick="contact"/>
+
+    <item
+        android:id="@+id/aboutus"
+        android:icon="@drawable/about"
+        android:title="About SDS" />
+    <item
+        android:id="@+id/visit"
+        android:icon="@drawable/location"
+        android:title="visit us" />
+
+    <item
+        android:id="@+id/adminst"
+        android:onClick="adminst"
+        android:title="Admin Settings"
+        android:icon="@drawable/admin"/>
+    <item
+        android:id="@+id/buttonLogout"
+        android:onClick="buttonLogout"
+        android:title="Logout"
+        android:icon="@drawable/logout"/>
+</menu>

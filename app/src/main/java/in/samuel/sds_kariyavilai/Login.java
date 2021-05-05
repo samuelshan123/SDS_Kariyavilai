@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ public class Login extends AppCompatActivity {
     EditText editTextUsername, editTextPassword;
     ProgressBar progressBar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,13 +37,12 @@ public class Login extends AppCompatActivity {
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
             startActivity(new Intent(this, Dashboard.class));
+            return;
         }
 
 
         editTextUsername = (EditText) findViewById(R.id.username);
         editTextPassword = (EditText) findViewById(R.id.userpass);
-
-
         //if user presses on login
         //calling the method login
         findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
@@ -130,5 +131,11 @@ public class Login extends AppCompatActivity {
         };
 
         VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+    }
+
+
+    public void adlog(View view) {
+        Intent i =new Intent(Login.this,AdminLogin.class);
+        startActivity(i);
     }
 }

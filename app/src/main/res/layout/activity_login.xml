@@ -91,6 +91,9 @@ android:background="@drawable/background"
                 android:layout_marginTop="20dp"
                 android:text="Admin Login"
                 android:textSize="18dp"
+                android:id="@+id/adlog"
+                android:onClick="adlog"
+                android:textColor="@color/orange"
                 android:textStyle="bold"
                 android:layout_marginBottom="20dp" />
 

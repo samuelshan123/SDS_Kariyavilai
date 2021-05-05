@@ -38,6 +38,7 @@ public class SharedPrefManager {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(KEY_USERNAME, user.getname());
+
         editor.apply();
     }
 
@@ -52,7 +53,7 @@ public class SharedPrefManager {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return new User(
 
-                sharedPreferences.getString(KEY_USERNAME, null)
+                sharedPreferences.getString(KEY_USERNAME, "null")
 
         );
     }
