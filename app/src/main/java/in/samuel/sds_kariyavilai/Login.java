@@ -37,7 +37,12 @@ public class Login extends AppCompatActivity {
         if (SharedPrefManager.getInstance(this).isLoggedIn()) {
             finish();
             startActivity(new Intent(this, Dashboard.class));
-            return;
+
+        }
+        else   if (SharedPreference.getInstance(this).isLogIn()) {
+            finish();
+            startActivity(new Intent(Login.this, AdminDashBoard.class));
+
         }
 
 

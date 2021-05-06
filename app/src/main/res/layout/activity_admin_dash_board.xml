@@ -10,7 +10,7 @@
     android:layout_width="match_parent">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/admintoolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/orange"
@@ -25,7 +25,7 @@
         android:background="@drawable/dashbacg"
         />
     <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
+        android:id="@+id/admindrawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -311,11 +311,11 @@
 
 
         <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+            android:id="@+id/adminnav_view"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:headerLayout="@layout/nav_header"
+            app:headerLayout="@layout/adminnav_header"
             app:menu="@menu/admin_menu" />
 
     </androidx.drawerlayout.widget.DrawerLayout>

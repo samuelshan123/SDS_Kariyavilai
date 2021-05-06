@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="220dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:gravity="bottom"
+        android:elevation="7dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/navback"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/profile_image"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/sds"
+            app:civ_border_width="2dp"
+            app:civ_border_color="@color/white"/>
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="8dp"
+            android:textColor="@color/white"
+            android:text="SuperUser"
+            android:textSize="20dp"
+            android:id="@+id/textViewAdmin"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        <TextView
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Sathiya Deva Sabai.Kariyavilai" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

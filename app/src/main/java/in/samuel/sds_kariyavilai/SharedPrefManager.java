@@ -17,6 +17,7 @@ public class SharedPrefManager {
     private static final String KEY_USERNAME = "keyusername";
 
 
+
     private static SharedPrefManager mInstance;
     private static Context mCtx;
 
@@ -46,6 +47,7 @@ public class SharedPrefManager {
     public boolean isLoggedIn() {
         SharedPreferences sharedPreferences = mCtx.getSharedPreferences(SHARED_PREF_NAME, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USERNAME, null) != null;
+
     }
 
     //this method will give the logged in user

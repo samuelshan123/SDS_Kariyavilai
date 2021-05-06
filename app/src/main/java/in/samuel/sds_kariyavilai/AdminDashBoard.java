@@ -19,38 +19,42 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 public class AdminDashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
-    private DrawerLayout drawer;
-    TextView textViewUsername;
+    private DrawerLayout admindrawer;
+    TextView textViewadmin;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_dash_board);
 
-        if (!SharedPrefManager.getInstance(this).isLoggedIn()) {
+        if (!SharedPreference.getInstance(this).isLogIn()) {
             finish();
             startActivity(new Intent(AdminDashBoard.this, Login.class));
         }
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        Toolbar adtoolbar = findViewById(R.id.admintoolbar);
+        setSupportActionBar(adtoolbar);
 
-        drawer = findViewById(R.id.drawer_layout);
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        admindrawer = findViewById(R.id.admindrawer_layout);
+        NavigationView navigationView = findViewById(R.id.adminnav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
-                R.string.nav_open, R.string.nav_close);
-        drawer.addDrawerListener(toggle);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, admindrawer, adtoolbar,
+                R.string.adminnav_open, R.string.adminnav_close);
+        admindrawer.addDrawerListener(toggle);
         toggle.syncState();
 
 
 
         //getting the current user
-        User user = SharedPrefManager.getInstance(AdminDashBoard.this).getUser();
+        AdminUser adminUser = SharedPreference.getInstance(AdminDashBoard.this).getAdminUser();
 
-        View headerView = navigationView.getHeaderView(0);
-        TextView navUsername = (TextView) headerView.findViewById(R.id.textViewUsername);
-        navUsername.setText(user.getname());
-        textViewUsername = (TextView) findViewById(R.id.textViewUsername);
+        View header = navigationView.getHeaderView(0);
+        textViewadmin = (TextView) findViewById(R.id.textViewAdmin);
+        TextView navAdminname = (TextView) header.findViewById(R.id.textViewAdmin);
+        navAdminname.setText(adminUser.getAdminname());
+
+
+
 
 
 
@@ -78,21 +82,21 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
 
         }
 
-        drawer.closeDrawer(GravityCompat.START);
+        admindrawer.closeDrawer(GravityCompat.START);
         return true;
     }
 
     @Override
     public void onBackPressed() {
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
+        if (admindrawer.isDrawerOpen(GravityCompat.START)) {
+            admindrawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
     }
     public void buttonLogout(MenuItem item) {
         finish();
-        SharedPrefManager.getInstance(getApplicationContext()).logout();
+        SharedPreference.getInstance(getApplicationContext()).logout();
     }
 
     public void contact(MenuItem item) {
