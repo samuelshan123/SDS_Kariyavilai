@@ -3,8 +3,10 @@
     package="in.samuel.sds_kariyavilai">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+
         android:name=".AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
-        android:usesCleartextTraffic="true">
+        android:usesCleartextTraffic="true"
+        >
         <activity android:name=".Add_Member"
             android:label="Admin Settings"></activity>
         <activity android:name=".AdminSettings"
