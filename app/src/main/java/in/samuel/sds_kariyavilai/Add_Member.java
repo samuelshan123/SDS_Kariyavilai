@@ -104,7 +104,7 @@ public class Add_Member extends AppCompatActivity {
 
                         progressBar.setVisibility(View.GONE);
                         Toast.makeText(getApplicationContext(),"Member added sucessfully",Toast.LENGTH_SHORT).show();
-
+                       finish();
                       startActivity(new Intent(getApplicationContext(),AdminSettings.class));
 
                     }
