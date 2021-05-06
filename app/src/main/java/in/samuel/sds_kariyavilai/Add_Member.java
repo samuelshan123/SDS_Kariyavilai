@@ -2,6 +2,7 @@ package in.samuel.sds_kariyavilai;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,9 +13,11 @@ import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -56,6 +59,8 @@ public class Add_Member extends AppCompatActivity {
         final String username = editTextUsername.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
 
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("Adding Member...");
 
         //first we will do the validations
 
@@ -65,62 +70,68 @@ public class Add_Member extends AppCompatActivity {
             return;
         }
 
-
-
-        if (TextUtils.isEmpty(password)) {
+        else if (TextUtils.isEmpty(password)) {
             editTextPassword.setError("Enter a password");
             editTextPassword.requestFocus();
             return;
         }
-        final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progress);
-        progressBar.setVisibility(View.VISIBLE);
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, URLs.URL_REGISTER,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        progressBar.setVisibility(View.GONE);
+        else{
 
-                        try {
-                            //converting response to json object
-                            JSONObject obj = new JSONObject(response);
+            StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsAdduser.php",
+                    new Response.Listener<String>() {
+                        @Override
+                        public void onResponse(String response) {
 
-                            //if no error in response
-                            if (!obj.getBoolean("error")) {
-                                Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-
-
-                            } else {
-                                Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_SHORT).show();
-
+                            if(response.equalsIgnoreCase("Data Inserted")){
+                                Toast.makeText(Add_Member.this, "Data Inserted", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+                            else{
+                                Toast.makeText(Add_Member.this, response, Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                            }
+
                         }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-
-                        progressBar.setVisibility(View.GONE);
-                        Toast.makeText(getApplicationContext(),"Member added sucessfully",Toast.LENGTH_SHORT).show();
-                       finish();
-                      startActivity(new Intent(getApplicationContext(),AdminSettings.class));
-
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String, String> params = new HashMap<>();
-                params.put("name", username);
-                params.put("pass", password);
-
-                return params;
+                    }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(Add_Member.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                    progressDialog.dismiss();
+                }
             }
-        };
 
-        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+            ){
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+
+                    Map<String,String> params = new HashMap<String,String>();
+
+                    params.put("name",username);
+                    params.put("email",password);
+
+
+
+
+                    return params;
+                }
+            };
+
+
+            RequestQueue requestQueue = Volley.newRequestQueue(Add_Member.this);
+            requestQueue.add(request);
+
+
+
+        }
+
+
+
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
