@@ -59,8 +59,9 @@ public class Add_Member extends AppCompatActivity {
         final String username = editTextUsername.getText().toString().trim();
         final String password = editTextPassword.getText().toString().trim();
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Adding Member...");
+        final ProgressBar progressBar = (ProgressBar)(findViewById(R.id.prog));
+        progressBar.setVisibility(View.VISIBLE);
+        Toast.makeText(Add_Member.this, "Adding Member.....", Toast.LENGTH_LONG).show();
 
         //first we will do the validations
 
@@ -82,13 +83,16 @@ public class Add_Member extends AppCompatActivity {
                         @Override
                         public void onResponse(String response) {
 
-                            if(response.equalsIgnoreCase("Data Inserted")){
-                                Toast.makeText(Add_Member.this, "Data Inserted", Toast.LENGTH_SHORT).show();
-                                progressDialog.dismiss();
+
+                            if(response.equalsIgnoreCase("User Added Successfully")){
+                                Toast.makeText(Add_Member.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
+                                progressBar.setVisibility(View.GONE);
                             }
+
+
                             else{
                                 Toast.makeText(Add_Member.this, response, Toast.LENGTH_SHORT).show();
-                                progressDialog.dismiss();
+                                progressBar.setVisibility(View.GONE);
                             }
 
                         }
@@ -96,7 +100,7 @@ public class Add_Member extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(Add_Member.this, error.getMessage(), Toast.LENGTH_SHORT).show();
-                    progressDialog.dismiss();
+                   progressBar.setVisibility(View.GONE);
                 }
             }
 
@@ -107,7 +111,7 @@ public class Add_Member extends AppCompatActivity {
                     Map<String,String> params = new HashMap<String,String>();
 
                     params.put("name",username);
-                    params.put("email",password);
+                    params.put("pass",password);
 
 
 

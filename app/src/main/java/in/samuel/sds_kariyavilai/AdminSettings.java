@@ -15,6 +15,6 @@ public class AdminSettings extends AppCompatActivity {
     }
 
     public void addmem(View view) {
-        startActivity(new Intent(getApplicationContext(),Add_Member.class));
+        startActivity(new Intent(getApplicationContext(),Members.class));
     }
 }

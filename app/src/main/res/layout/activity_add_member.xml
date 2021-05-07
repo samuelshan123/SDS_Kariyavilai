@@ -71,7 +71,11 @@
                 android:textColor="@android:color/white"
                 android:layout_marginBottom="25dp"/>
 
-
+<ProgressBar
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/prog"
+    android:visibility="gone"/>
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
