@@ -72,7 +72,7 @@ public class Add_Member extends AppCompatActivity {
         }
 
         else if (TextUtils.isEmpty(password)) {
-            editTextPassword.setError("Enter a password");
+            editTextPassword.setError("Enter password");
             editTextPassword.requestFocus();
             return;
         }
@@ -87,12 +87,14 @@ public class Add_Member extends AppCompatActivity {
                             if(response.equalsIgnoreCase("User Added Successfully")){
                                 Toast.makeText(Add_Member.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
+                                startActivity(new Intent(getApplicationContext(),Members.class));
                             }
 
 
                             else{
                                 Toast.makeText(Add_Member.this, response, Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
+
                             }
 
                         }
@@ -101,6 +103,7 @@ public class Add_Member extends AppCompatActivity {
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(Add_Member.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                    progressBar.setVisibility(View.GONE);
+
                 }
             }
 

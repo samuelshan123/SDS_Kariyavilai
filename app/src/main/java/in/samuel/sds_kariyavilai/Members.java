@@ -42,6 +42,7 @@ public class Members extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_members);
+         retrieveData();
 
         listView = findViewById(R.id.myListView);
         adapter = new MyAdapter(this,memberArrayList);
@@ -55,7 +56,7 @@ public class Members extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
 
 
-                CharSequence[] dialogItem = {"Delete Data"};
+                CharSequence[] dialogItem = {"Delete Member"};
                 builder.setTitle(memberArrayList.get(position).getName());
                 builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
                     @Override
@@ -64,23 +65,20 @@ public class Members extends AppCompatActivity {
                         if (i == 0) {
                             deleteData(memberArrayList.get(position).getId());
                         }
-
-
-
                     }
                 });
 
 
                 builder.create().show();
-
+                retrieveData();
 
             }
+
+
         });
 
-        retrieveData();
-
-
     }
+
 
     private void deleteData(final String id) {
 
@@ -90,8 +88,11 @@ public class Members extends AppCompatActivity {
                     public void onResponse(String response) {
 
                         if(response.equalsIgnoreCase("Data Deleted")){
+
                             Toast.makeText(Members.this, "Data Deleted Successfully", Toast.LENGTH_SHORT).show();
+                            retrieveData();
                         }
+
                         else{
                             Toast.makeText(Members.this, "Data Not Deleted", Toast.LENGTH_SHORT).show();
                         }
@@ -149,28 +150,12 @@ public class Members extends AppCompatActivity {
                                     churchUsers = new ChurchUsers(id,name);
                                     memberArrayList.add(churchUsers);
                                     adapter.notifyDataSetChanged();
-
-
-
                                 }
-
-
-
                             }
-
-
-
-
                         }
                         catch (JSONException e){
                             e.printStackTrace();
                         }
-
-
-
-
-
-
                     }
                 }, new Response.ErrorListener() {
             @Override
