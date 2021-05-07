@@ -174,4 +174,9 @@ public class Members extends AppCompatActivity {
     public void btn_add_activity(View view) {
         startActivity(new Intent(getApplicationContext(),Add_Member.class));
     }
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }

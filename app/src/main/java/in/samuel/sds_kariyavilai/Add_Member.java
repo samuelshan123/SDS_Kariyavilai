@@ -87,6 +87,7 @@ public class Add_Member extends AppCompatActivity {
                             if(response.equalsIgnoreCase("User Added Successfully")){
                                 Toast.makeText(Add_Member.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
+                                finish();
                                 startActivity(new Intent(getApplicationContext(),Members.class));
                             }
 
