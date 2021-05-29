@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Members"/>
+        <activity android:name=".Event"></activity>
+        <activity android:name=".AddEvent" />
+        <activity android:name=".Members" />
         <activity
             android:name=".Add_Member"
             android:label="Admin Settings" />

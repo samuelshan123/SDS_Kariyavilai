@@ -17,4 +17,12 @@ public class AdminSettings extends AppCompatActivity {
     public void addmem(View view) {
         startActivity(new Intent(getApplicationContext(),Members.class));
     }
+
+
+
+    public void AddEvent(View view) {
+        startActivity(new Intent(getApplicationContext(),Event.class));
+
+
+    }
 }
