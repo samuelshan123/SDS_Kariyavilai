@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-    android:background="#f0f0f0"
-    android:orientation="vertical" >
-
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#F5F5F5"
+    tools:context=".PrayerDetails">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,68 +22,52 @@
         android:background="@drawable/bg_parent_rounded_corner"
         android:orientation="vertical"
         android:paddingTop="5dp" >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/orange"
-                android:textStyle="bold"
-                android:id="@+id/memdate"
-                android:layout_gravity="center|right"
-                android:text="25 may"
-                android:letterSpacing="0.1"
-                android:paddingEnd="10dp"
-                android:paddingRight="10dp" />
-        </LinearLayout>
-
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="@dimen/feed_item_padding_left_right"
-            android:paddingRight="@dimen/feed_item_padding_left_right" >
+            android:padding="20dp" >
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:src="@drawable/sds"
                 android:layout_width="@dimen/feed_item_profile_pic"
                 android:layout_height="@dimen/feed_item_profile_pic"
                 />
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingLeft="@dimen/feed_item_profile_info_padd" >
 
+
                 <TextView
                     android:paddingLeft="10dp"
-                    android:text="Jesus"
-                    android:id="@+id/memName"
+                    android:text="sports day"
+                    android:id="@+id/pname"
                     android:gravity=""
                     android:layout_gravity=""
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:textSize="20sp"/>
 
+
                 <TextView
-                    android:id="@+id/prayer"
+                    android:id="@+id/pprayer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
-                    android:maxLines="1"
-                    android:maxLength="30"
                     android:textSize="18dp"
                     android:text="he oejfoef kpe wgeojtpoej"
-                    android:paddingBottom="10dp"
+                    android:paddingBottom="5dp"
                     android:paddingLeft="10dp"
                     android:paddingRight="@dimen/feed_item_status_pad_left_right"
                     />
 
 
             </LinearLayout>
+
         </LinearLayout>
 
 

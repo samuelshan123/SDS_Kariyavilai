@@ -44,6 +44,16 @@ public class UserEvents extends AppCompatActivity {
         mlistView = findViewById(R.id.evListView);
         eventAdapter = new EventAdapter(this, eventDatasArrayList);
         mlistView.setAdapter(eventAdapter);
+
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                // TODO Auto-generated method stub
+                startActivity(new Intent(UserEvents.this,EventDetails.class)
+                        .putExtra("position",position));
+
+            }
+        });
     }
 
     public void retrieveData(){
@@ -109,4 +119,5 @@ public class UserEvents extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),AddEvent.class));
 
     }
+
 }

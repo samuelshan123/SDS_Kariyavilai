@@ -45,7 +45,15 @@ public class PrayerRequest extends AppCompatActivity {
         prayerAdapter = new PrayerAdapter(this, prayerDataArrayList);
         plistView.setAdapter(prayerAdapter);
 
+        plistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                // TODO Auto-generated method stub
+                startActivity(new Intent(PrayerRequest.this,PrayerDetails.class)
+                        .putExtra("position",position));
 
+            }
+        });
     }
 
     public void retrievePrayerData() {
