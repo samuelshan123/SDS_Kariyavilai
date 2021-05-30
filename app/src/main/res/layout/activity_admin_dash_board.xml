@@ -166,7 +166,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="12dp"
                     android:background="#fff"
-
+                    android:onClick="prrequest"
                     app:cardCornerRadius="20dp"
                     app:cardElevation="12dp"
 
@@ -188,7 +188,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="About SDS"
+                            android:text="Prayer Requests"
                             android:textColor="#6f6f6f"
                             android:textSize="18sp"
                             android:textStyle="bold" />

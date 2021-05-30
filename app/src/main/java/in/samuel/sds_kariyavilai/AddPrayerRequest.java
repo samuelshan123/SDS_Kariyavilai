@@ -77,7 +77,7 @@ addPrayerreq();
                                 Toast.makeText(AddPrayerRequest.this, "Prayer Request Posted successfully", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                                 finish();
-                                startActivity(new Intent(getApplicationContext(),PrayerRequest.class));
+                                startActivity(new Intent(getApplicationContext(),Dashboard.class));
                             }
 
 
