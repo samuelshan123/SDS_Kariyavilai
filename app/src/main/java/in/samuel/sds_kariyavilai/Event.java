@@ -44,9 +44,76 @@ public class Event extends AppCompatActivity {
         mlistView = findViewById(R.id.evListView);
         eventAdapter = new EventAdapter(this,eventDatasArrayList);
         mlistView.setAdapter(eventAdapter);
+
+        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(view.getContext());
+
+
+                CharSequence[] dialogItem = {"Delete Event"};
+                builder.setTitle(eventDatasArrayList.get(position).getEventTitle());
+                builder.setItems(dialogItem, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int i) {
+
+                        if (i == 0) {
+                            deleteEvent(eventDatasArrayList.get(position).getEventTitle());
+                        }
+                    }
+                });
+
+
+                builder.create().show();
+                retrieveData();
+
+            }
+
+
+        });
+
     }
 
+    private void deleteEvent(final String title) {
 
+        StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsDeleteEvent.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        if(response.equalsIgnoreCase("Event Deleted")){
+
+                            Toast.makeText(Event.this, "Event Deleted Successfully", Toast.LENGTH_SHORT).show();
+                            retrieveData();
+                        }
+
+                        else{
+                            Toast.makeText(Event.this, "Event Not Deleted", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(Event.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String,String> params = new HashMap<String,String>();
+                params.put("title", title);
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+
+
+    }
 
     public void retrieveData(){
         final ProgressBar progress = findViewById(R.id.evprogress);
