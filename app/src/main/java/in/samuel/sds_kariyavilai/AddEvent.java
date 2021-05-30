@@ -68,14 +68,14 @@ EditText title,description,date;
         }
         else{
 
-            StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsAdduser.php",
+            StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsEventInsert.php",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
 
 
-                            if(response.equalsIgnoreCase("User Added Successfully")){
-                                Toast.makeText(AddEvent.this, "User Added Successfully", Toast.LENGTH_SHORT).show();
+                            if(response.equalsIgnoreCase("Event Added")){
+                                Toast.makeText(AddEvent.this, "Event Added", Toast.LENGTH_SHORT).show();
                                 progressBar.setVisibility(View.GONE);
                                 finish();
                                 startActivity(new Intent(getApplicationContext(),Event.class));
@@ -108,9 +108,6 @@ EditText title,description,date;
                     params.put("description",edesc);
                     params.put("date",edate);
 
-
-
-
                     return params;
                 }
             };
@@ -118,13 +115,7 @@ EditText title,description,date;
 
             RequestQueue requestQueue = Volley.newRequestQueue(AddEvent.this);
             requestQueue.add(request);
-
-
-
         }
-
-
-
 
     }
 
