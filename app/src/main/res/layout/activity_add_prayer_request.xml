@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="#F5F5F5"
-    tools:context=".AddEvent">
+    tools:context=".AddPrayerRequest">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -40,42 +40,41 @@
                 android:padding="15dp"
                 android:layout_margin="20dp"
                 android:layout_width="match_parent"
-                android:id="@+id/etTitle"
-                android:minLines="2"
+                android:id="@+id/yourname"
                 android:layout_height="wrap_content"
-                android:hint="Title"/>
+                android:hint="Your Name"/>
             <EditText
                 android:background="@drawable/background"
                 android:padding="15dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_width="match_parent"
-                android:id="@+id/etDescription"
+                android:id="@+id/yourrequest"
                 android:minLines="6"
                 android:gravity="top"
                 android:layout_height="wrap_content"
-                android:hint="Description"/>
+                android:hint="Write Your Request...."/>
             <EditText
                 android:background="@drawable/background"
                 android:padding="15dp"
                 android:layout_margin="20dp"
                 android:layout_width="match_parent"
-                android:id="@+id/etdate"
+                android:id="@+id/yourdate"
                 android:layout_height="wrap_content"
                 android:hint="Date/time : eg ( 29 jul / 9.00pm)"/>
 
             <Button
-                android:onClick="addevent"
+                android:onClick="addprayer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Add Event"
+                android:text="send"
                 android:textColor="@android:color/white"
                 android:layout_marginBottom="20dp"/>
 
             <ProgressBar
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/prog"
+                android:id="@+id/seprog"
                 android:visibility="gone"/>
         </LinearLayout>
 
