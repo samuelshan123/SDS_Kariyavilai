@@ -119,4 +119,10 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
         Intent intent = new Intent(AdminDashBoard.this,AdminSettings.class);
         startActivity(intent);
     }
+
+    public void event(View view) {
+        Intent intent = new Intent(AdminDashBoard.this,UserEvents.class);
+        startActivity(intent);
+
+    }
 }

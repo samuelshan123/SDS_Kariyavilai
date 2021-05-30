@@ -109,4 +109,10 @@ TextView textViewUsername;
         Intent intent = new Intent(Dashboard.this,Event_Gallery.class);
         startActivity(intent);
     }
+
+    public void userevent(View view) {
+        Intent intent = new Intent(Dashboard.this,UserEvents.class);
+        startActivity(intent);
+
+    }
 }

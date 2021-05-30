@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Event"></activity>
+        <activity android:name=".UserEvents"></activity>
+        <activity android:name=".Event" />
         <activity android:name=".AddEvent" />
         <activity android:name=".Members" />
         <activity
