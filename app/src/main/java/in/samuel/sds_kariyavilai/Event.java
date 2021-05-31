@@ -134,7 +134,7 @@ public class Event extends AppCompatActivity {
                             if(sucess.equals("1")){
 
 
-                                for(int i=0;i<jsonArray.length();i++){
+                                for(int i=jsonArray.length()-1;i>=0;i--){
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 

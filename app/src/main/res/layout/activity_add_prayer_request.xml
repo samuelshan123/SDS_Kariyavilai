@@ -54,6 +54,29 @@
                 android:gravity="top"
                 android:layout_height="wrap_content"
                 android:hint="Write Your Request...."/>
+
+                <RadioGroup
+                    android:paddingTop="15dp"
+                    android:id="@+id/radiogroup"
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/postpub"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Post Public"/>
+                    <RadioButton
+                        android:id="@+id/postpriv"
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Post Private"/>
+                </RadioGroup>
+
             <EditText
                 android:background="@drawable/background"
                 android:padding="15dp"

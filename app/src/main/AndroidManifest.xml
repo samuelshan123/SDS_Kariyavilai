@@ -16,11 +16,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PrayerDetails"></activity>
+        <activity android:name=".MemberPrayerDetails"></activity>
+        <activity android:name=".MemberPrayerRequest" />
+        <activity android:name=".PrayerDetails" />
         <activity android:name=".EventDetails" />
         <activity android:name=".AddPrayerRequest" />
-        <activity android:name=".PrayerRequest"
-            android:label="Prayer Request"/>
+        <activity
+            android:name=".PrayerRequest"
+            android:label="Prayer Request" />
         <activity
             android:name=".UserEvents"
             android:label="Events" />

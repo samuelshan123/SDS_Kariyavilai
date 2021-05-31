@@ -117,7 +117,7 @@ TextView textViewUsername;
     }
 
     public void prayreq(View view) {
-        Intent intent = new Intent(Dashboard.this,AddPrayerRequest.class);
+        Intent intent = new Intent(Dashboard.this,MemberPrayerRequest.class);
         startActivity(intent);
     }
 }

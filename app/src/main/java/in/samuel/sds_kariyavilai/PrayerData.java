@@ -2,6 +2,9 @@ package in.samuel.sds_kariyavilai;
 
 public class PrayerData {
     private String MemName,MemPrayer,MemDate;
+
+
+
     public PrayerData(){
 
     }

@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PrayerRequest extends AppCompatActivity {
-    String url = "https://unbruised-dive.000webhostapp.com/sdsRetrivePrayer.php";
+    String url = "https://unbruised-dive.000webhostapp.com/sdsRetrivePrivateprayer.php";
     ListView plistView;
     PrayerAdapter prayerAdapter;
     public static ArrayList<PrayerData> prayerDataArrayList = new ArrayList<>();
@@ -39,7 +39,7 @@ public class PrayerRequest extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prayer_request);
-        retrievePrayerData();
+        retrievePrivatePrayerData();
 
         plistView = findViewById(R.id.pListView);
         prayerAdapter = new PrayerAdapter(this, prayerDataArrayList);
@@ -56,7 +56,7 @@ public class PrayerRequest extends AppCompatActivity {
         });
     }
 
-    public void retrievePrayerData() {
+    public void retrievePrivatePrayerData() {
         final ProgressBar progress = findViewById(R.id.pprogress);
         progress.setVisibility(View.VISIBLE);
 
@@ -75,13 +75,13 @@ public class PrayerRequest extends AppCompatActivity {
                             if (sucess.equals("1")) {
 
 
-                                for (int i = 0; i < jsonArray.length(); i++) {
+                                for(int i=jsonArray.length()-1;i>=0;i--){
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-                                    String mname = object.getString("yname");
-                                    String mprayer = object.getString("yprayer");
-                                    String mdate = object.getString("ydate");
+                                    String mname = object.getString("aname");
+                                    String mprayer = object.getString("aprayer");
+                                    String mdate = object.getString("adate");
 
 
                                     prayerData = new PrayerData(mname, mprayer, mdate);

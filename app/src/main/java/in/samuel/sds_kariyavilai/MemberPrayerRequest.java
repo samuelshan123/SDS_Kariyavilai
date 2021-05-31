@@ -1,9 +1,7 @@
 package in.samuel.sds_kariyavilai;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,7 +10,6 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -25,39 +22,38 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
-public class UserEvents extends AppCompatActivity {
+public class MemberPrayerRequest extends AppCompatActivity {
 
-    String url = "https://unbruised-dive.000webhostapp.com/sdsEventRetrive.php";
-    ListView mlistView;
-    EventAdapter eventAdapter;
-    public static ArrayList<EventDatas> eventDatasArrayList = new ArrayList<>();
-    EventDatas eventDatas;
+    String url = "https://unbruised-dive.000webhostapp.com/sdsRetrivePrayer.php";
+    ListView mplistView;
+    MemberPrayerAdapter memberPrayerAdapter;
+    public static ArrayList<MemberPrayerdata> memberPrayerdataArrayList = new ArrayList<>();
+    MemberPrayerdata memberPrayerdata;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_user_events);
-        retrieveData();
+        setContentView(R.layout.activity_member_prayer_request);
+        retrievePrayerData();
 
-        mlistView = findViewById(R.id.evListView);
-        eventAdapter = new EventAdapter(this, eventDatasArrayList);
-        mlistView.setAdapter(eventAdapter);
+        mplistView = findViewById(R.id.mpListView);
+        memberPrayerAdapter = new MemberPrayerAdapter(this, memberPrayerdataArrayList);
+        mplistView.setAdapter(memberPrayerAdapter);
 
-        mlistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mplistView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
                 // TODO Auto-generated method stub
-                startActivity(new Intent(UserEvents.this,EventDetails.class)
+                startActivity(new Intent(MemberPrayerRequest.this,MemberPrayerDetails.class)
                         .putExtra("position",position));
 
             }
         });
     }
 
-    public void retrieveData(){
-        final ProgressBar progress = findViewById(R.id.evprogress);
+    public void retrievePrayerData() {
+        final ProgressBar progress = findViewById(R.id.mpprogress);
         progress.setVisibility(View.VISIBLE);
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
@@ -65,39 +61,38 @@ public class UserEvents extends AppCompatActivity {
                     @Override
                     public void onResponse(String response) {
                         progress.setVisibility(View.GONE);
-                        eventDatasArrayList.clear();
-                        try{
+                        memberPrayerdataArrayList.clear();
+                        try {
 
                             JSONObject jsonObject = new JSONObject(response);
                             String sucess = jsonObject.getString("success");
-                            JSONArray jsonArray = jsonObject.getJSONArray("eventdata");
+                            JSONArray jsonArray = jsonObject.getJSONArray("prayerdata");
 
-                            if(sucess.equals("1")){
+                            if (sucess.equals("1")) {
 
 
                                 for(int i=jsonArray.length()-1;i>=0;i--){
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
-                                    String EventTitle = object.getString("title");
-                                    String EventDescription = object.getString("description");
-                                    String EventDate = object.getString("date");
+                                    String mname = object.getString("yname");
+                                    String mprayer = object.getString("yprayer");
+                                    String mdate = object.getString("ydate");
 
+                                    memberPrayerdata = new MemberPrayerdata(mname, mprayer, mdate);
+                                    memberPrayerdataArrayList.add(memberPrayerdata);
+                                    memberPrayerAdapter.notifyDataSetChanged();
 
-                                    eventDatas = new EventDatas(EventTitle,EventDescription,EventDate);
-                                    eventDatasArrayList.add(eventDatas);
-                                    eventAdapter.notifyDataSetChanged();
                                 }
                             }
-                        }
-                        catch (JSONException e){
+                        } catch (JSONException e) {
                             e.printStackTrace();
                         }
                     }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(UserEvents.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MemberPrayerRequest.this, error.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -105,19 +100,15 @@ public class UserEvents extends AppCompatActivity {
         requestQueue.add(request);
 
 
-
-
+    }
+    public void addpr(View view) {
+        Intent intent = new Intent(MemberPrayerRequest.this,AddPrayerRequest.class);
+        startActivity(intent);
     }
     @Override
     public void onBackPressed() {
         super.onBackPressed();
         finish();
-    }
-
-
-    public void addev(View view) {
-        startActivity(new Intent(getApplicationContext(),AddEvent.class));
-
     }
 
 }

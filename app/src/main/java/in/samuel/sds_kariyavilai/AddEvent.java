@@ -18,6 +18,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -32,6 +35,23 @@ EditText title,description,date;
         description = (EditText) findViewById(R.id.etDescription);
         date = (EditText) findViewById(R.id.etdate);
 
+        SimpleDateFormat f = new SimpleDateFormat("MMM");
+        SimpleDateFormat f1 = new SimpleDateFormat("dd");
+        SimpleDateFormat f2 = new SimpleDateFormat("a");
+        int h,m;
+
+
+        Calendar.getInstance().get(Calendar.HOUR);
+            Calendar.getInstance().get(Calendar.MINUTE);
+
+        h = Calendar.getInstance().get(Calendar.HOUR);
+        m=Calendar.getInstance().get(Calendar.MINUTE);
+        String filename=""
+                +f1.format(new Date())
+                +f.format(new Date())+
+                "/"
+                +h+"."+m+f2.format(new Date());
+        date.setText(filename);
 
     }
 
