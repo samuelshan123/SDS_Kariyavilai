@@ -10,16 +10,17 @@
     <application
         android:name=".AppController"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/sdslauncher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/sdslauncher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
         <activity android:name=".PrayerDetails"></activity>
         <activity android:name=".EventDetails" />
         <activity android:name=".AddPrayerRequest" />
-        <activity android:name=".PrayerRequest" />
+        <activity android:name=".PrayerRequest"
+            android:label="Prayer Request"/>
         <activity
             android:name=".UserEvents"
             android:label="Events" />
