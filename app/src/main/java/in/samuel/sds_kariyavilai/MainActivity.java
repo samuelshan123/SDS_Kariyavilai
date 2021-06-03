@@ -6,6 +6,7 @@ import android.os.Handler;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         int SPLASH_TIME_OUT = 1500;
         new Handler().postDelayed(new Runnable() {
