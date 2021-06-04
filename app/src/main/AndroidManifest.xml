@@ -8,7 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
-        android:name=".AppController"
+        android:name=".EventGallery.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/sdslauncher"
         android:label="@string/app_name"
@@ -16,35 +16,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MemberPrayerDetails"></activity>
-        <activity android:name=".MemberPrayerRequest" />
-        <activity android:name=".PrayerDetails" />
-        <activity android:name=".EventDetails" />
-        <activity android:name=".AddPrayerRequest" />
+        <activity android:name=".WishMe"></activity>
+        <activity android:name=".ChurchMembers.MemberPrayerDetails" />
+        <activity android:name=".ChurchMembers.MemberPrayerRequest" />
+        <activity android:name=".ChurchMembers.PrayerDetails" />
+        <activity android:name=".Admin.EventDetails" />
+        <activity android:name=".ChurchMembers.AddPrayerRequest" />
         <activity
-            android:name=".PrayerRequest"
+            android:name=".ChurchMembers.PrayerRequest"
             android:label="Prayer Request" />
         <activity
-            android:name=".UserEvents"
+            android:name=".ChurchMembers.UserEvents"
             android:label="Events" />
         <activity
-            android:name=".Event"
+            android:name=".Admin.Event"
             android:label="Event Manager" />
         <activity
-            android:name=".AddEvent"
+            android:name=".Admin.AddEvent"
             android:label="Add Event" />
-        <activity android:name=".Members" />
+        <activity android:name=".Admin.Members" />
         <activity
-            android:name=".Add_Member"
+            android:name=".Admin.Add_Member"
             android:label="Admin Settings" />
         <activity
-            android:name=".AdminSettings"
+            android:name=".Admin.AdminSettings"
             android:label="Admin Settings" />
         <activity
-            android:name=".AdminDashBoard"
+            android:name=".Admin.AdminDashBoard"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity android:name=".AdminLogin" />
-        <activity android:name=".Event_Gallery" />
+        <activity android:name=".Admin.AdminLogin" />
+        <activity android:name=".EventGallery.Event_Gallery" />
         <activity
             android:name=".Worshiptime"
             android:label="Worship Schedule" />
@@ -52,7 +53,7 @@
             android:name=".Contacts"
             android:label="Contacts" />
         <activity
-            android:name=".Dashboard"
+            android:name=".ChurchMembers.Dashboard"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".Login"

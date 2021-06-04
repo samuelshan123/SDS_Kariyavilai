@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:background="#F5F5F5"
-    tools:context=".AddEvent">
+    tools:context=".Admin.AddEvent">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"

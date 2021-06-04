@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -22,6 +21,13 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import in.samuel.sds_kariyavilai.Admin.AdminDashBoard;
+import in.samuel.sds_kariyavilai.Admin.AdminLogin;
+import in.samuel.sds_kariyavilai.ChurchMembers.Dashboard;
+import in.samuel.sds_kariyavilai.ChurchMembers.User;
+import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPrefManager;
+import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPreference;
 
 public class Login extends AppCompatActivity {
 
@@ -140,7 +146,7 @@ public class Login extends AppCompatActivity {
 
 
     public void adlog(View view) {
-        Intent i =new Intent(Login.this,AdminLogin.class);
+        Intent i =new Intent(Login.this, AdminLogin.class);
         startActivity(i);
     }
 }

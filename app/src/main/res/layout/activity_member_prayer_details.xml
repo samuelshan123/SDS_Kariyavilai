@@ -9,7 +9,7 @@
     android:layout_gravity="center"
     android:gravity="center"
     android:background="#F5F5F5"
-    tools:context=".MemberPrayerDetails">
+    tools:context=".ChurchMembers.MemberPrayerDetails">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
