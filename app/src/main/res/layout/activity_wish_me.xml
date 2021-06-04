@@ -14,9 +14,13 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:stackFromBottom="true"
+        android:divider="@null"
+        android:layout_above="@id/from"
         android:id="@+id/wishListView"/>
 
     <LinearLayout
+        android:id="@+id/from"
         android:elevation="7dp"
         android:padding="5dp"
         android:gravity="center"

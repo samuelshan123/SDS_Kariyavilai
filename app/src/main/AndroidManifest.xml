@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".WishMe"></activity>
+        <activity android:name=".WishMe"
+            android:label="Wish Me"></activity>
         <activity android:name=".ChurchMembers.MemberPrayerDetails" />
         <activity android:name=".ChurchMembers.MemberPrayerRequest" />
         <activity android:name=".ChurchMembers.PrayerDetails" />
