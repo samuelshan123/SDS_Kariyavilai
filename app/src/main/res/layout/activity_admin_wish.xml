@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".WishMe">
+    android:id="@+id/adminw"
+    tools:context=".Admin.AdminWish">
 
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:stackFromBottom="true"
-        android:background="@drawable/chat_background"
         android:divider="@null"
+        android:background="@drawable/chat_background"
         android:transcriptMode="alwaysScroll"
         android:layout_above="@id/from"
         android:id="@+id/wishListView"/>
@@ -21,13 +22,12 @@
         android:layout_height="wrap_content"
         android:id="@+id/wprogress"
         android:visibility="visible"/>
-
     <LinearLayout
         android:id="@+id/from"
-        android:background="@drawable/navback"
         android:elevation="7dp"
         android:padding="5dp"
         android:gravity="center"
+        android:background="@drawable/navback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -37,25 +37,23 @@
 
 
         <EditText
-            android:elevation="7dp"
             android:id="@+id/messageEditText"
             android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:hint="Type a wish message....."
+            android:background="@drawable/background"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/button1"
-            android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignTop="@+id/button1"
             android:layout_toLeftOf="@+id/sendMessageButton"
             android:layout_weight="0.72"
-            android:background="@drawable/background"
-            android:hint="Type a wish message....."
-            android:maxHeight="80dp"
-            android:padding="10dp" />
+            android:maxHeight="80dp" />
 
         <ImageButton
             android:background="@drawable/circle"
             android:onClick="send"
             android:layout_width="50dp"
-            android:elevation="7dp"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"

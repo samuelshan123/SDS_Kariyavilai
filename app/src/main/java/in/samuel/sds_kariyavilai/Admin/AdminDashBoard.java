@@ -142,7 +142,7 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     }
 
     public void wismmead(View view) {
-        Intent intent = new Intent(AdminDashBoard.this, WishMe.class);
+        Intent intent = new Intent(AdminDashBoard.this, AdminWish.class);
         startActivity(intent);
     }
 }

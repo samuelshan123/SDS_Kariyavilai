@@ -1,6 +1,8 @@
 package in.samuel.sds_kariyavilai;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.cardview.widget.CardView;
 
 import java.util.List;
 
@@ -33,6 +36,7 @@ public class WishmeAdapter extends ArrayAdapter<WishmeData> {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.wishme_list,null,true);
 
+
         TextView tvTitle = view.findViewById(R.id.Wname);
         TextView tvDescription = view.findViewById(R.id.Wmessage);
         TextView tvDate = view.findViewById(R.id.Wtime);
@@ -44,6 +48,7 @@ public class WishmeAdapter extends ArrayAdapter<WishmeData> {
 
         return view;
     }
+
 }
 
 
