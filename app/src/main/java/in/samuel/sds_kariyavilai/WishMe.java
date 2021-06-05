@@ -2,10 +2,12 @@ package in.samuel.sds_kariyavilai;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -88,7 +90,7 @@ progress.setVisibility(View.VISIBLE);
                             if (sucess.equals("1")) {
 
 
-                                for(int i=jsonArray.length()-1;i>=0;i--){
+                                for(int i=0;i< jsonArray.length();i++){
 
                                     JSONObject object = jsonArray.getJSONObject(i);
 
@@ -121,6 +123,17 @@ progress.setVisibility(View.VISIBLE);
 
     public void send(View view) {
         AddWish();
+        etwmessage.setText("");
+        closeKeyBoard();
+    }
+
+    private void closeKeyBoard(){
+        View view = this.getCurrentFocus();
+        if (view != null){
+            InputMethodManager imm = (InputMethodManager)
+                    getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
     private void AddWish() {
         final String wmessage = etwmessage.getText().toString().trim();
@@ -147,8 +160,8 @@ progress.setVisibility(View.VISIBLE);
                 +h+"."+m+f2.format(new Date());
            wtime = time;
 
-        final ProgressBar progressBar = (ProgressBar)(findViewById(R.id.wprogress));
-        progressBar.setVisibility(View.VISIBLE);
+
+        Toast.makeText(WishMe.this, "posting....", Toast.LENGTH_SHORT).show();
 
 
         //first we will do the validations
@@ -160,13 +173,14 @@ progress.setVisibility(View.VISIBLE);
         }
 
         else{
-
+            final ProgressBar progressBar = (ProgressBar)(findViewById(R.id.wprogress));
+            progressBar.setVisibility(View.VISIBLE);
             StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsWishmesend.php",
                     new Response.Listener<String>() {
                         @Override
                         public void onResponse(String response) {
 
-
+                             progressBar.setVisibility(View.GONE);
                             if(response.equalsIgnoreCase("wishes added")){
                                 Toast.makeText(WishMe.this, response, Toast.LENGTH_SHORT).show();
                                 retriveWishme();
