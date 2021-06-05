@@ -81,56 +81,6 @@
             android:scaleType="fitXY"
        android:padding="5dp"
             android:visibility="visible" />
-        <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:id="@+id/like"
-                android:onClick="like"
-                android:src="@drawable/ic_thumb_up_black_24dp"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Like"
-                android:textStyle="bold"
-                android:layout_below="@+id/like"/>
-            <ImageView
-                android:onClick="dislike"
-                android:layout_marginLeft="40dp"
-                android:id="@+id/dislike"
-                android:src="@drawable/ic_thumb_down_black_24dp"
-               android:layout_toRightOf="@+id/like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Dislike"
-                android:textStyle="bold"
-                android:layout_marginLeft="52dp"
-                android:layout_below="@+id/dislike"/>
-            <ImageView
-                android:layout_marginLeft="100dp"
-                android:id="@+id/comment"
-                android:src="@drawable/ic_comment_black_24dp"
-                android:layout_toRightOf="@+id/like"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="comment"
-                android:textStyle="bold"
-                android:layout_marginLeft="110dp"
-                android:layout_below="@+id/comment"/>
-        </RelativeLayout>
 
     </LinearLayout>
 

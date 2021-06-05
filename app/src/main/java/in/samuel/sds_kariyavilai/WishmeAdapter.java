@@ -42,6 +42,7 @@ public class WishmeAdapter extends ArrayAdapter<WishmeData> {
         TextView tvDate = view.findViewById(R.id.Wtime);
 
         tvDate.setText(arrayListWishmeData.get(pos).getWtime());
+        tvDate.setTextColor(Color.RED);
         tvTitle.setText(arrayListWishmeData.get(pos).getWname());
 
         tvDescription.setText(arrayListWishmeData.get(pos).getWmessage());

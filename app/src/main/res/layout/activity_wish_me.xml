@@ -24,7 +24,6 @@
 
     <LinearLayout
         android:id="@+id/from"
-        android:background="@drawable/navback"
         android:elevation="7dp"
         android:padding="5dp"
         android:gravity="center"
@@ -45,6 +44,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentBottom="true"
             android:layout_toLeftOf="@+id/sendMessageButton"
+            android:textColorHint="@color/orange"
             android:layout_weight="0.72"
             android:background="@drawable/background"
             android:hint="Type a wish message....."

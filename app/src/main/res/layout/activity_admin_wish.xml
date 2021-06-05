@@ -27,7 +27,6 @@
         android:elevation="7dp"
         android:padding="5dp"
         android:gravity="center"
-        android:background="@drawable/navback"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -46,6 +45,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:layout_alignTop="@+id/button1"
+            android:textColorHint="@color/orange"
             android:layout_toLeftOf="@+id/sendMessageButton"
             android:layout_weight="0.72"
             android:maxHeight="80dp" />
