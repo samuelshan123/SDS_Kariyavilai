@@ -3,7 +3,8 @@ package in.samuel.sds_kariyavilai.Admin;
 public class AdminUser {
     private String adminname;
 
-    public AdminUser( String adminname ) {
+    public AdminUser( String adminname) {
+
 
         this.adminname = adminname;
 
@@ -11,9 +12,13 @@ public class AdminUser {
     }
 
 
-
     public String getAdminname() {
         return adminname;
     }
+
+    public void setAdminname(String adminname) {
+        this.adminname = adminname;
+    }
+
 
 }

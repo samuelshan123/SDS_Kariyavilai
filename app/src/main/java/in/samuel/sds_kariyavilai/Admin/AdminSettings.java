@@ -27,4 +27,9 @@ public class AdminSettings extends AppCompatActivity {
 
 
     }
+
+    public void addadmin(View view) {
+        startActivity(new Intent(getApplicationContext(), Admins.class));
+
+    }
 }

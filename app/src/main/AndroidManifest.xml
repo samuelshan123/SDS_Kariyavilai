@@ -16,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Admin.AdminWish"></activity>
+        <activity android:name=".Admin.Add_Admin"></activity>
+        <activity android:name=".Admin.Admins" />
+        <activity android:name=".Admin.AdminWish" />
         <activity
             android:name=".WishMe"
             android:label="Wish Me" />
