@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="25dp"
+    app:cardElevation="20dp"
+    android:layout_gravity="center"
+    tools:context=".Offerings">
+    <LinearLayout
+        android:background="#ffff"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+            <TextView
+                android:textColor="@color/orange"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Payment Confirmation"
+                android:gravity="center"
+                android:textSize="30sp"
+                android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/gpay"/>
+
+            <EditText
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp"
+                android:background="@drawable/background"
+                android:layout_width="match_parent"
+                android:hint="..........₹"
+                android:textStyle="bold"
+                android:textColorHint="@color/orange"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:textColor="@color/black"
+                android:padding="15dp"
+                android:id="@+id/amount"/>
+
+            <Button
+                android:textSize="20sp"
+                android:id="@+id/send"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="Proceed to Pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:padding="20dp"
+                android:text="Note: if you get error in Google Pay try some other UPI Applications."
+                android:layout_width="match_parent"
+                android:textColor="@color/orange"
+                android:textStyle="bold"
+                android:layout_height="wrap_content"/>
+    </LinearLayout>
+        </androidx.cardview.widget.CardView>
+

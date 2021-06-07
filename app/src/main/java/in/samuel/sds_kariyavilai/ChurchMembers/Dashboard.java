@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
 import in.samuel.sds_kariyavilai.MainActivity;
+import in.samuel.sds_kariyavilai.Offerings;
 import in.samuel.sds_kariyavilai.R;
 import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPrefManager;
 import in.samuel.sds_kariyavilai.WishMe;
@@ -130,6 +131,11 @@ TextView textViewUsername;
 
     public void wish(View view) {
         Intent intent = new Intent(Dashboard.this, WishMe.class);
+        startActivity(intent);
+    }
+
+    public void offer(View view) {
+        Intent intent = new Intent(Dashboard.this, Offerings.class);
         startActivity(intent);
     }
 }

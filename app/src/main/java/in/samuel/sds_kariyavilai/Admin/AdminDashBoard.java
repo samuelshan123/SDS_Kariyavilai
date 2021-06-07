@@ -21,6 +21,7 @@ import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
 import in.samuel.sds_kariyavilai.Login;
 import in.samuel.sds_kariyavilai.ChurchMembers.PrayerRequest;
+import in.samuel.sds_kariyavilai.Offerings;
 import in.samuel.sds_kariyavilai.R;
 import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPreference;
 import in.samuel.sds_kariyavilai.ChurchMembers.UserEvents;
@@ -143,6 +144,11 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
 
     public void wismmead(View view) {
         Intent intent = new Intent(AdminDashBoard.this, AdminWish.class);
+        startActivity(intent);
+    }
+
+    public void offering(View view) {
+        Intent intent = new Intent(AdminDashBoard.this, Offerings.class);
         startActivity(intent);
     }
 }
