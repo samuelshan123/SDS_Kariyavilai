@@ -17,6 +17,8 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import in.samuel.sds_kariyavilai.AboutSDS;
+import in.samuel.sds_kariyavilai.Admin.AdminDashBoard;
 import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
 import in.samuel.sds_kariyavilai.MainActivity;
@@ -136,6 +138,11 @@ TextView textViewUsername;
 
     public void offer(View view) {
         Intent intent = new Intent(Dashboard.this, Offerings.class);
+        startActivity(intent);
+    }
+
+    public void aboutus(MenuItem item) {
+        Intent intent = new Intent(Dashboard.this, AboutSDS.class);
         startActivity(intent);
     }
 }

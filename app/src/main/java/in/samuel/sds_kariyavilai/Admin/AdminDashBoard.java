@@ -17,6 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
+import in.samuel.sds_kariyavilai.AboutSDS;
 import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
 import in.samuel.sds_kariyavilai.Login;
@@ -150,5 +151,11 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     public void offering(View view) {
         Intent intent = new Intent(AdminDashBoard.this, Offerings.class);
         startActivity(intent);
+    }
+
+    public void about(MenuItem item) {
+        Intent intent = new Intent(AdminDashBoard.this, AboutSDS.class);
+        startActivity(intent);
+
     }
 }

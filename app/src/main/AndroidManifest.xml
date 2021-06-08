@@ -16,7 +16,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Offerings"></activity>
+        <activity android:name=".AboutSDS"></activity>
+        <activity android:name=".Offerings" />
         <activity android:name=".Admin.Add_Admin" />
         <activity android:name=".Admin.Admins" />
         <activity android:name=".Admin.AdminWish" />

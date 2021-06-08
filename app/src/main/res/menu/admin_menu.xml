@@ -15,6 +15,7 @@
 
     <item
         android:id="@+id/aboutus"
+        android:onClick="about"
         android:icon="@drawable/about"
         android:title="About SDS" />
     <item

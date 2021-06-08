@@ -18,21 +18,29 @@
         android:layout_height="wrap_content">
 
             <TextView
-                android:textColor="@color/orange"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Payment Confirmation"
+                android:textColor="@color/orange"
                 android:gravity="center"
                 android:textSize="30sp"
                 android:textStyle="bold"/>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_gravity="center"
+    android:gravity="center">
 
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/gpay"/>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/gpay"/>
 
-            <EditText
+</LinearLayout>
+
+        <EditText
                 android:layout_marginBottom="30dp"
                 android:layout_marginLeft="60dp"
                 android:layout_marginRight="60dp"
@@ -61,8 +69,8 @@
                 android:padding="20dp"
                 android:text="Note: if you get error in Google Pay try some other UPI Applications."
                 android:layout_width="match_parent"
-                android:textColor="@color/orange"
                 android:textStyle="bold"
+
                 android:layout_height="wrap_content"/>
     </LinearLayout>
         </androidx.cardview.widget.CardView>

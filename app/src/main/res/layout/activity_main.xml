@@ -5,9 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
     tools:context=".MainActivity"
     android:background="@color/white">
     <LinearLayout
+        android:id="@+id/li"
         android:layout_width="match_parent"
         android:orientation="vertical"
         android:gravity="center"
@@ -23,6 +26,11 @@
             android:text="VERSION 1.0"
             android:textColor="@color/orange"
             android:gravity="center"/>
+
+
+
     </LinearLayout>
+
+
 
 </RelativeLayout>
