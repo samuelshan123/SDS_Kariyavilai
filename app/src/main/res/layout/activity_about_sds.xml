@@ -8,6 +8,7 @@
     android:layout_height="match_parent"
     tools:context=".AboutSDS">
 <LinearLayout
+    android:layout_marginTop="20dp"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:padding="0dp"
@@ -18,6 +19,7 @@
         android:layout_height="wrap_content"
         android:text="Sathiya Deva Sabai"
         android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"
         android:textColor="@color/orange"
         android:textSize="25dp"
         android:gravity="center"/>

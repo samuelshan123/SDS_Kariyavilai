@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="VERSION 1.0"
+            android:fontFamily="sans-serif-smallcaps"
             android:textColor="@color/orange"
             android:gravity="center"/>
 
