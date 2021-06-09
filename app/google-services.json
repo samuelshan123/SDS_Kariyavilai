@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "103819227564",
+    "project_id": "sdskariyavilai",
+    "storage_bucket": "sdskariyavilai.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:103819227564:android:fc45c213f6c6b43f464a09",
+        "android_client_info": {
+          "package_name": "in.samuel.sds_kariyavilai"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "103819227564-24t4b2qajn8677q3ugaskm2tch6pdu9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWo2Jl6YuEw6DhRMpz-egU36vomHs7MW4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "103819227564-24t4b2qajn8677q3ugaskm2tch6pdu9d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

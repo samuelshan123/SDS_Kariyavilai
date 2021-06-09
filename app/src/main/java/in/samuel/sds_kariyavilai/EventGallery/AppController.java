@@ -7,6 +7,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.onesignal.OneSignal;
 
 public class AppController extends Application {
 
@@ -15,6 +16,7 @@ public class AppController extends Application {
     private RequestQueue mRequestQueue;
     private ImageLoader mImageLoader;
     LruBitmapCache mLruBitmapCache;
+    private static final String ONESIGNAL_APP_ID = "b91ab1ea-2573-4503-a5e1-f6d0b129be15";
 
     private static AppController mInstance;
 
@@ -22,6 +24,12 @@ public class AppController extends Application {
     public void onCreate() {
         super.onCreate();
         mInstance = this;
+        // Enable verbose OneSignal logging to debug issues if needed.
+        OneSignal.setLogLevel(OneSignal.LOG_LEVEL.VERBOSE, OneSignal.LOG_LEVEL.NONE);
+
+        // OneSignal Initialization
+        OneSignal.initWithContext(this);
+        OneSignal.setAppId(ONESIGNAL_APP_ID);
     }
 
     public static synchronized AppController getInstance() {

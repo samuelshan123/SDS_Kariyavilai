@@ -16,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,8 +30,7 @@ import in.samuel.sds_kariyavilai.Admin.EventDatas;
 import in.samuel.sds_kariyavilai.Admin.EventDetails;
 import in.samuel.sds_kariyavilai.R;
 
-public class UserEvents extends AppCompatActivity {
-
+public class UserEvents extends AppCompatActivity{
     String url = "https://unbruised-dive.000webhostapp.com/sdsEventRetrive.php";
     ListView mlistView;
     EventAdapter eventAdapter;
@@ -120,5 +120,6 @@ public class UserEvents extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(), AddEvent.class));
 
     }
+
 
 }
