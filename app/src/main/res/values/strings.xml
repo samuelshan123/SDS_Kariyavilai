@@ -4,6 +4,7 @@
       of the navigation drawer-->
     <string name="nav_open">Open</string>
     <string name="nav_close">Close</string>
+    <string name="default_notification_channel_id">alarm_channel_id_01</string>
 
     <string name="adminnav_open">Open</string>
     <string name="adminnav_close">Close</string>
