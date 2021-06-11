@@ -35,25 +35,7 @@ EditText title,description,date;
 
         title = (EditText) findViewById(R.id.etTitle);
         description = (EditText) findViewById(R.id.etDescription);
-        date = (EditText) findViewById(R.id.etdate);
 
-        SimpleDateFormat f = new SimpleDateFormat("MMM");
-        SimpleDateFormat f1 = new SimpleDateFormat("dd");
-        SimpleDateFormat f2 = new SimpleDateFormat("a");
-        int h,m;
-
-
-        Calendar.getInstance().get(Calendar.HOUR);
-            Calendar.getInstance().get(Calendar.MINUTE);
-
-        h = Calendar.getInstance().get(Calendar.HOUR);
-        m=Calendar.getInstance().get(Calendar.MINUTE);
-        String filename=""
-                +f1.format(new Date())
-                +f.format(new Date())+
-                "/"
-                +h+"."+m+f2.format(new Date());
-        date.setText(filename);
 
     }
 
@@ -64,7 +46,24 @@ EditText title,description,date;
     private void addEvent() {
         final String etitle = title.getText().toString().trim();
         final String edesc = description.getText().toString().trim();
-        final String edate = date.getText().toString().trim();
+
+        SimpleDateFormat f = new SimpleDateFormat("MMM");
+        SimpleDateFormat f1 = new SimpleDateFormat("dd");
+        SimpleDateFormat f2 = new SimpleDateFormat("a");
+        int h,m;
+
+
+        Calendar.getInstance().get(Calendar.HOUR);
+        Calendar.getInstance().get(Calendar.MINUTE);
+
+        h = Calendar.getInstance().get(Calendar.HOUR);
+        m=Calendar.getInstance().get(Calendar.MINUTE);
+        String  time =
+                f1.format(new Date())
+                        +f.format(new Date())+
+                        "/"
+                        +h+"."+m+f2.format(new Date());
+        String wtime = time;
 
         final ProgressBar progressBar = (ProgressBar)(findViewById(R.id.prog));
         progressBar.setVisibility(View.VISIBLE);
@@ -81,11 +80,6 @@ EditText title,description,date;
         else if (TextUtils.isEmpty(edesc)) {
             description.setError("Enter Description");
             description.requestFocus();
-            return;
-        }
-        else if (TextUtils.isEmpty(edate)) {
-            date.setError("Enter Date and Time");
-            date.requestFocus();
             return;
         }
         else{
@@ -128,7 +122,7 @@ EditText title,description,date;
 
                     params.put("title",etitle);
                     params.put("description",edesc);
-                    params.put("date",edate);
+                    params.put("date",wtime);
 
                     return params;
                 }

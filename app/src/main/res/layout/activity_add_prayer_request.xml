@@ -56,12 +56,13 @@ app:cardElevation="20dp"
                 android:hint="Write Your Request...."/>
 
                 <RadioGroup
-                    android:paddingTop="15dp"
                     android:id="@+id/radiogroup"
                     android:layout_width="match_parent"
                     android:orientation="horizontal"
+                    android:background="@drawable/background"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:layout_margin="20dp"
                     android:layout_height="wrap_content">
                     <RadioButton
                         android:id="@+id/postpub"
@@ -77,14 +78,6 @@ app:cardElevation="20dp"
                         android:text="Post Private"/>
                 </RadioGroup>
 
-            <EditText
-                android:background="@drawable/background"
-                android:padding="15dp"
-                android:layout_margin="20dp"
-                android:layout_width="match_parent"
-                android:id="@+id/yourdate"
-                android:layout_height="wrap_content"
-                android:hint="Date/time : eg ( 29 jul / 9.00pm)"/>
 
             <Button
                 android:onClick="addprayer"

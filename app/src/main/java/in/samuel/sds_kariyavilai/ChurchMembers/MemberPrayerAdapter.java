@@ -35,7 +35,7 @@ public class MemberPrayerAdapter extends ArrayAdapter<MemberPrayerdata> {
 
         TextView tvTitle = view.findViewById(R.id.MemberName);
         TextView tvDescription = view.findViewById(R.id.Memberprayer);
-        TextView tvDate = view.findViewById(R.id.MemberName);
+        TextView tvDate = view.findViewById(R.id.MemberDate);
 
         tvDate.setText(arrayListmemberprayerdata.get(pos).getMdate());
         tvTitle.setText(arrayListmemberprayerdata.get(pos).getMname());

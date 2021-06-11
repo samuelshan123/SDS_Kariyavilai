@@ -41,7 +41,6 @@ app:cardElevation="20dp"
                 android:layout_margin="20dp"
                 android:layout_width="match_parent"
                 android:id="@+id/etTitle"
-                android:minLines="2"
                 android:layout_height="wrap_content"
                 android:hint="Title"/>
             <EditText
@@ -55,14 +54,6 @@ app:cardElevation="20dp"
                 android:gravity="top"
                 android:layout_height="wrap_content"
                 android:hint="Description"/>
-            <EditText
-                android:background="@drawable/background"
-                android:padding="15dp"
-                android:layout_margin="20dp"
-                android:layout_width="match_parent"
-                android:id="@+id/etdate"
-                android:layout_height="wrap_content"
-                android:hint="Date/time : eg ( 29 jul / 9.00pm)"/>
 
             <Button
                 android:onClick="addevent"

@@ -32,6 +32,7 @@ public class AddPrayerRequest extends AppCompatActivity {
 EditText etyname,etyprayer,etydate;
     private RadioGroup radioGroup;
     private RadioButton postpublic,postprivate;
+    String ydate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,9 @@ EditText etyname,etyprayer,etydate;
 
         etyname = (EditText) findViewById(R.id.yourname);
         etyprayer = (EditText) findViewById(R.id.yourrequest);
-        etydate = (EditText) findViewById(R.id.yourdate);
+
+
+
         SimpleDateFormat f = new SimpleDateFormat("MMM");
         SimpleDateFormat f1 = new SimpleDateFormat("dd");
         SimpleDateFormat f2 = new SimpleDateFormat("a");
@@ -52,13 +55,12 @@ EditText etyname,etyprayer,etydate;
 
         h = Calendar.getInstance().get(Calendar.HOUR);
         m=Calendar.getInstance().get(Calendar.MINUTE);
-        String filename=""
-                +f1.format(new Date())
-                +f.format(new Date())+
-                "/"
-                +h+"."+m+f2.format(new Date());
-        etydate.setText(filename);
-
+        String  time =
+                f1.format(new Date())
+                        +f.format(new Date())+
+                        "/"
+                        +h+"."+m+f2.format(new Date());
+        ydate = time;
 
         radioGroup = (RadioGroup)findViewById(R.id.radiogroup);
         postpublic=(RadioButton)findViewById(R.id.postpub);
@@ -131,7 +133,7 @@ EditText etyname,etyprayer,etydate;
     private void addPrayerreq() {
         final String yname = etyname.getText().toString().trim();
         final String yprayer = etyprayer.getText().toString().trim();
-        final String ydate = etydate.getText().toString().trim();
+
 
         final ProgressBar progressBar = (ProgressBar)(findViewById(R.id.seprog));
         progressBar.setVisibility(View.VISIBLE);
@@ -148,11 +150,7 @@ EditText etyname,etyprayer,etydate;
             etyprayer.requestFocus();
             return;
         }
-        else if (TextUtils.isEmpty(ydate)) {
-            etydate.setError("Enter Date and Time");
-            etydate.requestFocus();
-            return;
-        }
+
         else{
 
             StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsaddPrayer.php",
@@ -209,7 +207,7 @@ EditText etyname,etyprayer,etydate;
     private void addPrivatePrayerreq() {
         final String yname = etyname.getText().toString().trim();
         final String yprayer = etyprayer.getText().toString().trim();
-        final String ydate = etydate.getText().toString().trim();
+
 
         final ProgressBar progressBar = (ProgressBar)(findViewById(R.id.seprog));
         progressBar.setVisibility(View.VISIBLE);
@@ -228,11 +226,7 @@ EditText etyname,etyprayer,etydate;
             etyprayer.requestFocus();
             return;
         }
-        else if (TextUtils.isEmpty(ydate)) {
-            etydate.setError("Enter Date and Time");
-            etydate.requestFocus();
-            return;
-        }
+
         else{
 
             StringRequest request = new StringRequest(Request.Method.POST, "https://unbruised-dive.000webhostapp.com/sdsAddPrivateprayer.php",
