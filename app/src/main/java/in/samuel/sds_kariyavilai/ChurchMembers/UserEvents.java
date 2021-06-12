@@ -60,6 +60,7 @@ public class UserEvents extends AppCompatActivity{
     public void retrieveData(){
         final ProgressBar progress = findViewById(R.id.evprogress);
         progress.setVisibility(View.VISIBLE);
+        Toast.makeText(UserEvents.this,"Loading Events", Toast.LENGTH_SHORT).show();
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

@@ -5,16 +5,22 @@ import android.app.AlarmManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import java.util.Calendar;
 
@@ -25,7 +31,9 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+    Animation anim;
 
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +41,32 @@ public class MainActivity extends AppCompatActivity {
         checkInternetConenction();
         scheduleAlarm();
 
-        int SPLASH_TIME_OUT = 1000;
+        CardView imageView =(CardView) findViewById(R.id.li) ;
+        LinearLayout backgroundView =(LinearLayout)findViewById(R.id.back) ;
+        TextView textView=(TextView)findViewById(R.id.ver) ;
+
+        anim = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.sise_slide); // Create the animation.
+        anim.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                startActivity(new Intent(getApplicationContext(),Login.class));
+                // HomeActivity.class is the activity to go after showing the splash screen.
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+        imageView.startAnimation(anim);
+        backgroundView.startAnimation(anim);
+        textView.startAnimation(anim);
+
+
+       /* int SPLASH_TIME_OUT = 1000;
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -42,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
             }
-        }, SPLASH_TIME_OUT);
+        }, SPLASH_TIME_OUT);*/
     }
     private void checkInternetConenction() {
         // get Connectivity Manager object to check connection
@@ -87,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                             afterTwoMinutes, pendingIntent);
 */
 
-        calendar.set(Calendar.HOUR_OF_DAY,13);
+        calendar.set(Calendar.HOUR_OF_DAY,8);
         calendar.set(Calendar.MINUTE,0);
         calendar.set(Calendar.SECOND,0);
         if (now.after(calendar)) {

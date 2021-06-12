@@ -56,6 +56,7 @@ public class PrayerRequest extends AppCompatActivity {
     public void retrievePrivatePrayerData() {
         final ProgressBar progress = findViewById(R.id.pprogress);
         progress.setVisibility(View.VISIBLE);
+        Toast.makeText(PrayerRequest.this,"Loading Prayer Requests", Toast.LENGTH_SHORT).show();
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {

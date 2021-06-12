@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import in.samuel.sds_kariyavilai.ChurchMembers.UserEvents;
 import in.samuel.sds_kariyavilai.R;
 
 public class Event extends AppCompatActivity {
@@ -120,6 +121,7 @@ public class Event extends AppCompatActivity {
     public void retrieveData(){
         final ProgressBar progress = findViewById(R.id.evprogress);
         progress.setVisibility(View.VISIBLE);
+        Toast.makeText(Event.this,"Loading Events", Toast.LENGTH_SHORT).show();
 
         StringRequest request = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
