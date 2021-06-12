@@ -14,7 +14,13 @@
     android:layout_height="wrap_content"
     android:padding="0dp"
     android:orientation="vertical">
-
+<LinearLayout
+    android:layout_margin="10dp"
+    android:padding="10dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background"
+    android:orientation="vertical">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +37,7 @@
         android:textSize="15dp"
         android:layout_gravity="center"
         android:gravity="center"/>
-
+</LinearLayout>
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_margin="40dp"
@@ -50,7 +56,8 @@
         android:layout_width="150dp"
         android:layout_gravity="center"
         android:layout_height="150dp"
-        android:src="@drawable/pastor"/>
+        android:id="@+id/pastor"
+        />
 
     <TextView
         android:layout_width="match_parent"
@@ -90,10 +97,11 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/pasfam" />
+                android:id="@+id/pasfam"
+                 />
 
             <TextView
                 android:layout_width="match_parent"
@@ -133,10 +141,11 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/mens" />
+                android:id="@+id/mens"
+                 />
 
             <TextView
                 android:layout_width="match_parent"
@@ -175,10 +184,11 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:layout_width="wrap_content"
+                android:layout_width="300dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
-                android:src="@drawable/women" />
+                android:id="@+id/women"
+                />
 
             <TextView
                 android:layout_width="match_parent"

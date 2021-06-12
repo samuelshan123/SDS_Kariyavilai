@@ -61,9 +61,10 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:paddingLeft="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:paddingRight="20dp"
                 android:layout_height="wrap_content">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -82,8 +83,8 @@
                 android:layout_height="wrap_content"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
-                android:paddingLeft="20dp"
-                android:paddingRight="20dp">
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -100,7 +101,7 @@
                 android:id="@+id/login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="25dp"
                 android:text="login"
                 android:textColor="@android:color/white" />
 
@@ -109,9 +110,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Admin Login"
+                android:text="ADMIN LOGIN"
                 android:textSize="18dp"
+                android:background="@drawable/background"
                 android:id="@+id/adlog"
+                android:padding="2dp"
                 android:onClick="adlog"
                 android:textColor="@color/orange"
                 android:textStyle="bold"
