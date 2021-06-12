@@ -16,7 +16,6 @@
         android:layout_height="?attr/actionBarSize"
         android:background="@color/orange"
         android:elevation="4dp"
-        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
     <LinearLayout
         android:orientation="vertical"
@@ -291,7 +290,8 @@
             android:layout_height="match_parent"
             android:layout_gravity="start"
             app:headerLayout="@layout/adminnav_header"
-            app:menu="@menu/admin_menu" />
+            app:menu="@menu/admin_menu"
+            android:theme="@style/Theme.AppCompat.Light"/>
 
     </androidx.drawerlayout.widget.DrawerLayout>
 </RelativeLayout>
