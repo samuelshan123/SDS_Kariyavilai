@@ -65,8 +65,6 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "  Please connect to internet ", Toast.LENGTH_LONG).show();
         }
     }
-    @SuppressLint("ShortAlarm")
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     private void scheduleAlarm() {
         Intent alarmIntent = new Intent(this, AlarmReceiver.class);
         alarmIntent.putExtra("data", "New Notification Recived");
@@ -89,9 +87,9 @@ public class MainActivity extends AppCompatActivity {
                             afterTwoMinutes, pendingIntent);
 */
 
-        calendar.set(Calendar.HOUR_OF_DAY,8);
-        calendar.set(Calendar.MINUTE,00);
-        calendar.set(Calendar.SECOND,00);
+        calendar.set(Calendar.HOUR_OF_DAY,13);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.SECOND,0);
         if (now.after(calendar)) {
             Log.d("Hey","Added a day");
             calendar.add(Calendar.DATE, 1);

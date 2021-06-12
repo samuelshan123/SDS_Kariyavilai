@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_gravity="center"
     android:layout_height="match_parent"
-    tools:context=".AboutSDS">
+    tools:context=".AboutSDS"
+    >
 <LinearLayout
     android:layout_marginTop="20dp"
     android:layout_width="match_parent"
@@ -209,4 +210,4 @@
     android:text="Designed and Developed by SDS Ⓡ"
     android:layout_height="wrap_content"/>
 </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

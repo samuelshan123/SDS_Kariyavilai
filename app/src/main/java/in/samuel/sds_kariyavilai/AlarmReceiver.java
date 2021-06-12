@@ -1,5 +1,6 @@
 package in.samuel.sds_kariyavilai;
 
+import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -31,7 +32,7 @@ public class AlarmReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationManager notificationManager = (NotificationManager) mcontext.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        Uri defaultSoundUri= RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(mcontext.getString(R.string.default_notification_channel_id), "Rewards Notifications", NotificationManager.IMPORTANCE_DEFAULT);
 
@@ -43,16 +44,17 @@ public class AlarmReceiver extends BroadcastReceiver {
             notificationChannel.enableVibration(true);
             notificationManager.createNotificationChannel(notificationChannel);
         }
+            NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(mcontext, mcontext.getString(R.string.default_notification_channel_id))
+                    .setContentTitle("இன்று நீங்கள் ஜெபித்தீர்களா?")
+                    .setContentText("நீங்கள் இன்று வேதத்தை தியானித்தீர்களா?")
+                    .setAutoCancel(true)
+                    .setSmallIcon(R.mipmap.sdslauncher_round)
+                    .setSound(defaultSoundUri)
+                    .setPriority(Notification.PRIORITY_HIGH)
+                    .setContentIntent(pendingIntent);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(mcontext, mcontext.getString(R.string.default_notification_channel_id))
-                .setContentTitle("இன்று நீங்கள் ஜெபித்தீர்களா?")
-                .setContentText("நீங்கள் இன்று வேதத்தை தியானித்தீர்களா?")
-                .setAutoCancel(true)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-                .setSound(defaultSoundUri)
-                .setContentIntent(pendingIntent);
 
+            notificationManager.notify(R.string.default_notification_channel_id, notificationBuilder.build());
+        }
 
-        notificationManager.notify(R.string.default_notification_channel_id, notificationBuilder.build());
-    }
 }
