@@ -5,17 +5,17 @@
 
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.SET_ALARM"/>
-
-
+    <uses-permission android:name="android.permission.SET_ALARM" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-<queries>
-    <package android:name="com.sdzshn3.onesignalapi"/>
-</queries>
+
+    <queries>
+        <package android:name="com.sdzshn3.onesignalapi" />
+    </queries>
+
     <application
         android:name=".EventGallery.AppController"
         android:allowBackup="true"
@@ -26,12 +26,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".AboutSDS"></activity>
+        <activity android:name=".Admin.Prayers_Category"></activity>
+        <activity android:name=".AboutSDS" />
         <activity android:name=".Offerings" />
         <activity android:name=".Admin.Add_Admin" />
         <activity android:name=".Admin.Admins" />
         <activity android:name=".Admin.AdminWish" />
-
         <activity
             android:name=".WishMe"
             android:label="Wish Me" />
@@ -83,10 +83,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <receiver android:name= ".AlarmReceiver"
-            android:enabled="true">
-        </receiver>
 
+        <receiver
+            android:name=".AlarmReceiver"
+            android:enabled="true"></receiver>
     </application>
 
 </manifest>

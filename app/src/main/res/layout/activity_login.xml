@@ -112,7 +112,6 @@
                 android:layout_marginTop="20dp"
                 android:text="ADMIN LOGIN"
                 android:textSize="18dp"
-                android:background="@drawable/background"
                 android:id="@+id/adlog"
                 android:padding="2dp"
                 android:onClick="adlog"

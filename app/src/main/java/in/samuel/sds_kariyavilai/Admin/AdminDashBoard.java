@@ -138,7 +138,7 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     }
 
     public void prrequest(View view) {
-        Intent intent = new Intent(AdminDashBoard.this, PrayerRequest.class);
+        Intent intent = new Intent(AdminDashBoard.this, Prayers_Category.class);
         startActivity(intent);
 
     }
