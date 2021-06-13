@@ -34,8 +34,9 @@
         android:layout_margin="40dp"
         android:layout_gravity="center"
         app:cardCornerRadius="20dp"
-        app:cardElevation="20dp"
+        app:cardElevation="40dp"
         android:id="@+id/li"
+        android:background="@color/white"
         android:gravity="center"
         tools:context=".MainActivity"
         >
@@ -47,12 +48,13 @@
         android:orientation="vertical"
         android:gravity="center"
         android:layout_height="match_parent">
+
         <ImageView
-            android:elevation="20dp"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:id="@+id/img"
-            android:src="@drawable/sds"/>
+            android:src="@drawable/sds"
+             />
         <TextView
             android:layout_marginTop="20dp"
             android:textStyle="bold"
