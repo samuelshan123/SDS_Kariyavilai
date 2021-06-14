@@ -20,6 +20,7 @@ import com.google.android.material.navigation.NavigationView;
 import in.samuel.sds_kariyavilai.AboutSDS;
 import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
+import in.samuel.sds_kariyavilai.Helpsupport;
 import in.samuel.sds_kariyavilai.Login;
 import in.samuel.sds_kariyavilai.Offerings;
 import in.samuel.sds_kariyavilai.R;
@@ -158,6 +159,8 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     }
 
     public void helpandsupport(MenuItem item) {
+        Intent intent = new Intent(AdminDashBoard.this, Helpsupport.class);
+        startActivity(intent);
 
     }
 }
