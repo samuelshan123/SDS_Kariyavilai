@@ -21,13 +21,11 @@ import in.samuel.sds_kariyavilai.AboutSDS;
 import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
 import in.samuel.sds_kariyavilai.Login;
-import in.samuel.sds_kariyavilai.ChurchMembers.PrayerRequest;
 import in.samuel.sds_kariyavilai.Offerings;
 import in.samuel.sds_kariyavilai.R;
 import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPreference;
 import in.samuel.sds_kariyavilai.ChurchMembers.UserEvents;
-import in.samuel.sds_kariyavilai.WishMe;
-import in.samuel.sds_kariyavilai.Worshiptime;
+import in.samuel.sds_kariyavilai.Covid19.Covidindia;
 
 public class AdminDashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout admindrawer;
@@ -116,7 +114,7 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     }
 
     public void wortime(View view) {
-        Intent intent = new Intent(AdminDashBoard.this, Worshiptime.class);
+        Intent intent = new Intent(AdminDashBoard.this, Covidindia.class);
         startActivity(intent);
     }
 
@@ -156,6 +154,10 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     public void about(MenuItem item) {
         Intent intent = new Intent(AdminDashBoard.this, AboutSDS.class);
         startActivity(intent);
+
+    }
+
+    public void helpandsupport(MenuItem item) {
 
     }
 }

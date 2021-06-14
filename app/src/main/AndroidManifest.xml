@@ -26,7 +26,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Admin.Prayers_Category"></activity>
+        <activity android:name=".Helpsupport"></activity>
+        <activity
+            android:name=".Covid19.DistrictDataActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Covid19.StateDataActivity" />
+        </activity>
+        <activity
+            android:name=".Covid19.StateDataActivity"
+            android:launchMode="singleTop">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Covid19.Covidindia" />
+        </activity>
+        <activity android:name=".Admin.Prayers_Category" />
         <activity android:name=".AboutSDS" />
         <activity android:name=".Offerings" />
         <activity android:name=".Admin.Add_Admin" />
@@ -65,8 +80,8 @@
         <activity android:name=".Admin.AdminLogin" />
         <activity android:name=".EventGallery.Event_Gallery" />
         <activity
-            android:name=".Worshiptime"
-            android:label="Worship Schedule" />
+            android:name=".Covid19.Covidindia"
+            android:label="COVID&apos;19" />
         <activity
             android:name=".Contacts"
             android:label="Contacts" />
@@ -86,7 +101,7 @@
 
         <receiver
             android:name=".AlarmReceiver"
-            android:enabled="true"></receiver>
+            android:enabled="true" />
     </application>
 
 </manifest>

@@ -18,15 +18,15 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.google.android.material.navigation.NavigationView;
 
 import in.samuel.sds_kariyavilai.AboutSDS;
-import in.samuel.sds_kariyavilai.Admin.AdminDashBoard;
 import in.samuel.sds_kariyavilai.Contacts;
 import in.samuel.sds_kariyavilai.EventGallery.Event_Gallery;
+import in.samuel.sds_kariyavilai.Helpsupport;
 import in.samuel.sds_kariyavilai.MainActivity;
 import in.samuel.sds_kariyavilai.Offerings;
 import in.samuel.sds_kariyavilai.R;
 import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPrefManager;
 import in.samuel.sds_kariyavilai.WishMe;
-import in.samuel.sds_kariyavilai.Worshiptime;
+import in.samuel.sds_kariyavilai.Covid19.Covidindia;
 
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
@@ -110,7 +110,7 @@ TextView textViewUsername;
     }
 
     public void wortime(View view) {
-        Intent intent = new Intent(Dashboard.this, Worshiptime.class);
+        Intent intent = new Intent(Dashboard.this, Covidindia.class);
         startActivity(intent);
     }
 
@@ -144,5 +144,11 @@ TextView textViewUsername;
     public void aboutus(MenuItem item) {
         Intent intent = new Intent(Dashboard.this, AboutSDS.class);
         startActivity(intent);
+    }
+
+    public void helpsupport(MenuItem item) {
+        Intent intent = new Intent(Dashboard.this, Helpsupport.class);
+        startActivity(intent);
+
     }
 }

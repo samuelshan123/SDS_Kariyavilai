@@ -29,6 +29,12 @@
         android:onClick="adminst"
         android:title="Admin Settings"
         android:icon="@drawable/admin"/>
+
+    <item
+        android:onClick="helpandsupport"
+        android:title="Help &amp; support"
+        android:icon="@drawable/ic_baseline_support_agent_24"/>
+
     <item
         android:id="@+id/buttonLogout"
         android:onClick="buttonLogout"

@@ -115,12 +115,12 @@
                             <ImageView
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:src="@drawable/worship" />
+                                android:src="@drawable/corona" />
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Worship scedule"
+                                android:text="COVID'19 India"
                                 android:textColor="#6f6f6f"
                                 android:textSize="18sp"
                                 android:textStyle="bold" />

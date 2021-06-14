@@ -20,6 +20,11 @@
                 android:id="@+id/visit"
                 android:icon="@drawable/location"
                 android:title="visit us" />
+    <item
+        android:onClick="helpsupport"
+        android:title="Help &amp; support"
+        android:icon="@drawable/ic_baseline_support_agent_24"/>
+
 
     <item
         android:id="@+id/buttonLogout"
