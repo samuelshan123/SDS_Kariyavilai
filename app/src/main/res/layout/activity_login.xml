@@ -84,14 +84,16 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 
                 android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginRight="20dp"
+                app:passwordToggleEnabled="true"
+                android:drawablePadding="10dp"
+                app:startIconTint="@color/orange"
+                app:startIconDrawable="@drawable/ic_baseline_lock_24">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
-                    android:drawableLeft="@drawable/ic_baseline_lock_24"
-                    android:drawablePadding="10dp"
                     android:inputType="textPassword"
                     android:id="@+id/userpass"
                     />
