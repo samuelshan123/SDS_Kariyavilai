@@ -88,13 +88,15 @@ public class Offerings extends AppCompatActivity {
 
         // will always show a dialog to user to choose an app
         Intent chooser = Intent.createChooser(upiPayIntent, "Pay with");
+        startActivityForResult(chooser, UPI_PAYMENT);
+
 
         // check if intent resolves
-        if(null != chooser.resolveActivity(getPackageManager())) {
+      /*  if(null != chooser.resolveActivity(getPackageManager())) {
             startActivityForResult(chooser, UPI_PAYMENT);
         } else {
             Toast.makeText(Offerings.this,"No UPI app found, please install one to continue",Toast.LENGTH_SHORT).show();
-        }
+        }*/
 
     }
 
