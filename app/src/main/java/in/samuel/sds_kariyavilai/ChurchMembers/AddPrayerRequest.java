@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,10 +27,16 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import in.samuel.sds_kariyavilai.Admin.AdminDashBoard;
+import in.samuel.sds_kariyavilai.Admin.AdminUser;
+import in.samuel.sds_kariyavilai.Login;
 import in.samuel.sds_kariyavilai.R;
+import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPrefManager;
+import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPreference;
 
 public class AddPrayerRequest extends AppCompatActivity {
-EditText etyname,etyprayer,etydate;
+EditText etyprayer,etydate;
+TextView etyname;
     private RadioGroup radioGroup;
     private RadioButton postpublic,postprivate;
     String ydate;
@@ -39,10 +46,23 @@ EditText etyname,etyprayer,etydate;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_prayer_request);
 
-        etyname = (EditText) findViewById(R.id.yourname);
+
+        etyname = (TextView) findViewById(R.id.yourname);
         etyprayer = (EditText) findViewById(R.id.yourrequest);
 
 
+
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+
+            User user = SharedPrefManager.getInstance(this).getUser();
+            etyname.setText(user.getname());
+
+        }
+        else  if (SharedPreference.getInstance(this).isLogIn()) {
+            AdminUser adminUser =SharedPreference.getInstance(this).getAdminUser();
+            etyname.setText(adminUser.getAdminname());
+
+        }
 
         SimpleDateFormat f = new SimpleDateFormat("MMM");
         SimpleDateFormat f1 = new SimpleDateFormat("dd");

@@ -124,7 +124,7 @@ public class Members extends AppCompatActivity {
         final ProgressBar progress = findViewById(R.id.progress);
         progress.setVisibility(View.VISIBLE);
 
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

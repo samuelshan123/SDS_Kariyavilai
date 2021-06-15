@@ -55,6 +55,7 @@ public class WishMe extends AppCompatActivity {
     WishmeAdapter wishmeAdapter;
     public static ArrayList<WishmeData> wishmeDataArrayList = new ArrayList<>();
 WishmeData wishmeData;
+    String wnmae;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,7 +76,7 @@ etwmessage =(EditText)findViewById(R.id.messageEditText);
         final ProgressBar progress = findViewById(R.id.wprogress);
 progress.setVisibility(View.VISIBLE);
 
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -137,10 +138,19 @@ progress.setVisibility(View.VISIBLE);
     }
     private void AddWish() {
         final String wmessage = etwmessage.getText().toString().trim();
-        String wnmae,wtime;
+        String wtime;
 
-        User user = SharedPrefManager.getInstance(WishMe.this).getUser();
-       wnmae = user.getname();
+        if (SharedPrefManager.getInstance(this).isLoggedIn()) {
+
+            User user = SharedPrefManager.getInstance(this).getUser();
+            wnmae=user.getname();
+
+        }
+        else  if (SharedPreference.getInstance(this).isLogIn()) {
+            AdminUser adminUser =SharedPreference.getInstance(this).getAdminUser();
+            wnmae=adminUser.getAdminname();
+
+        }
 
         SimpleDateFormat f = new SimpleDateFormat("MMM");
         SimpleDateFormat f1 = new SimpleDateFormat("dd");

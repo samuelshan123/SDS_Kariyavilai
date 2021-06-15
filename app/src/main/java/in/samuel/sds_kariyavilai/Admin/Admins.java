@@ -123,7 +123,7 @@ AdminUser adminUser;
         final ProgressBar progress = findViewById(R.id.adprogress);
         progress.setVisibility(View.VISIBLE);
 
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

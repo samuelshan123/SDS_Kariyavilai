@@ -33,6 +33,8 @@ public class AlarmReceiver extends BroadcastReceiver {
         NotificationManager notificationManager = (NotificationManager) mcontext.getSystemService(Context.NOTIFICATION_SERVICE);
 
        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+       // Uri defaultSoundUri = Uri.parse("android.resource://in.samuel.sds_kariyavilai/raw/noti");
+
         //Uri defaultSoundUri = Uri.parse("android.resource://" + mcontext.getPackageName() + "/" + R.raw.noti);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(mcontext.getString(R.string.default_notification_channel_id), "Rewards Notifications", NotificationManager.IMPORTANCE_DEFAULT);

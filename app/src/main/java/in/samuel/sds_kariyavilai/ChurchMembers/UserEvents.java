@@ -62,7 +62,7 @@ public class UserEvents extends AppCompatActivity{
         progress.setVisibility(View.VISIBLE);
         Toast.makeText(UserEvents.this,"Loading Events", Toast.LENGTH_SHORT).show();
 
-        StringRequest request = new StringRequest(Request.Method.POST, url,
+        StringRequest request = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

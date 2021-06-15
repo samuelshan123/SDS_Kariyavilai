@@ -27,6 +27,7 @@ import in.samuel.sds_kariyavilai.R;
 import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPreference;
 import in.samuel.sds_kariyavilai.ChurchMembers.UserEvents;
 import in.samuel.sds_kariyavilai.Covid19.Covidindia;
+import in.samuel.sds_kariyavilai.WishMe;
 
 public class AdminDashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout admindrawer;
@@ -143,7 +144,7 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
     }
 
     public void wismmead(View view) {
-        Intent intent = new Intent(AdminDashBoard.this, AdminWish.class);
+        Intent intent = new Intent(AdminDashBoard.this, WishMe.class);
         startActivity(intent);
     }
 
