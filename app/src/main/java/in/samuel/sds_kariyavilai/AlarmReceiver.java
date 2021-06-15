@@ -32,7 +32,8 @@ public class AlarmReceiver extends BroadcastReceiver {
                 PendingIntent.FLAG_UPDATE_CURRENT);
         NotificationManager notificationManager = (NotificationManager) mcontext.getSystemService(Context.NOTIFICATION_SERVICE);
 
-        Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+       Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+        //Uri defaultSoundUri = Uri.parse("android.resource://" + mcontext.getPackageName() + "/" + R.raw.noti);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             NotificationChannel notificationChannel = new NotificationChannel(mcontext.getString(R.string.default_notification_channel_id), "Rewards Notifications", NotificationManager.IMPORTANCE_DEFAULT);
 
@@ -43,12 +44,13 @@ public class AlarmReceiver extends BroadcastReceiver {
             notificationChannel.setVibrationPattern(new long[]{0, 500, 200, 500});
             notificationChannel.enableVibration(true);
             notificationManager.createNotificationChannel(notificationChannel);
+
         }
             NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(mcontext, mcontext.getString(R.string.default_notification_channel_id))
                     .setContentTitle("இன்று நீங்கள் ஜெபித்தீர்களா?")
                     .setContentText("நீங்கள் இன்று வேதத்தை தியானித்தீர்களா?")
                     .setAutoCancel(true)
-                    .setSmallIcon(R.mipmap.sdslauncher_round)
+                    .setSmallIcon(R.mipmap.sdslauncher)
                     .setSound(defaultSoundUri)
                     .setPriority(Notification.PRIORITY_HIGH)
                     .setContentIntent(pendingIntent);

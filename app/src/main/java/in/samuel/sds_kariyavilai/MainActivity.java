@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
                             afterTwoMinutes, pendingIntent);
 */
 
-        calendar.set(Calendar.HOUR_OF_DAY,7);
+        calendar.set(Calendar.HOUR_OF_DAY,12);
         calendar.set(Calendar.MINUTE,0);
         calendar.set(Calendar.SECOND,0);
         if (now.after(calendar)) {
