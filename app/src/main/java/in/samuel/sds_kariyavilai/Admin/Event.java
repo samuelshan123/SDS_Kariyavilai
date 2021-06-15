@@ -70,11 +70,12 @@ public class Event extends AppCompatActivity {
 
                 builder.create().show();
                 retrieveData();
-
             }
 
 
+
         });
+
 
     }
 
