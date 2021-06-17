@@ -28,6 +28,7 @@ import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPreference;
 import in.samuel.sds_kariyavilai.ChurchMembers.UserEvents;
 import in.samuel.sds_kariyavilai.Covid19.Covidindia;
 import in.samuel.sds_kariyavilai.WishMe;
+import in.samuel.sds_kariyavilai.Youtube;
 
 public class AdminDashBoard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout admindrawer;
@@ -163,5 +164,10 @@ public class AdminDashBoard extends AppCompatActivity implements NavigationView.
         Intent intent = new Intent(AdminDashBoard.this, Helpsupport.class);
         startActivity(intent);
 
+    }
+
+    public void youtube(View view) {
+        Intent intent = new Intent(AdminDashBoard.this, Youtube.class);
+        startActivity(intent);
     }
 }

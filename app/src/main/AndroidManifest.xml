@@ -13,7 +13,6 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
-
     <queries>
         <package android:name="com.sdzshn3.onesignalapi" />
     </queries>
@@ -28,7 +27,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SDS_Kariyavilai"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Helpsupport"></activity>
+        <activity android:name=".Youtube"></activity>
+        <activity android:name=".Helpsupport" />
         <activity
             android:name=".Covid19.DistrictDataActivity"
             android:launchMode="singleTop">
