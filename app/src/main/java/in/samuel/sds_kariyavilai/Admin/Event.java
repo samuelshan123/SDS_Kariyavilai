@@ -19,6 +19,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.CubeGrid;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
+import com.github.ybq.android.spinkit.style.RotatingPlane;
+import com.github.ybq.android.spinkit.style.WanderingCubes;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -121,6 +126,8 @@ public class Event extends AppCompatActivity {
 
     public void retrieveData(){
         final ProgressBar progress = findViewById(R.id.evprogress);
+        Sprite doubleBounce = new CubeGrid();
+        progress.setIndeterminateDrawable(doubleBounce);
         progress.setVisibility(View.VISIBLE);
         Toast.makeText(Event.this,"Loading Events", Toast.LENGTH_SHORT).show();
 
