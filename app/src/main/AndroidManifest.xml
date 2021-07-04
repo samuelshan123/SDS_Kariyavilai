@@ -79,7 +79,8 @@
             android:name=".Admin.AdminDashBoard"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity android:name=".Admin.AdminLogin" />
-        <activity android:name=".EventGallery.Event_Gallery" />
+        <activity android:name=".EventGallery.Event_Gallery"
+            android:label="Event Gallery"/>
         <activity
             android:name=".Covid19.Covidindia"
             android:label="COVID&apos;19" />

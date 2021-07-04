@@ -10,12 +10,16 @@ import org.json.JSONObject;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.android.volley.Request.Method;
@@ -24,17 +28,27 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.ChasingDots;
+import com.github.ybq.android.spinkit.style.Circle;
+import com.github.ybq.android.spinkit.style.DoubleBounce;
+import com.github.ybq.android.spinkit.style.FadingCircle;
+import com.github.ybq.android.spinkit.style.Pulse;
+import com.github.ybq.android.spinkit.style.ThreeBounce;
+import com.github.ybq.android.spinkit.style.Wave;
 
 import in.samuel.sds_kariyavilai.ChurchMembers.User;
 import in.samuel.sds_kariyavilai.MainActivity;
 import in.samuel.sds_kariyavilai.R;
 import in.samuel.sds_kariyavilai.SDS_SharedPreference.SharedPrefManager;
 
-public class Event_Gallery extends Activity {
+public class Event_Gallery extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
     private ListView listView;
     private FeedListAdapter listAdapter;
     private List<FeedItem> feedItems;
+    ActionBar actionBar;
+
     private String URL_FEED = "https://unbruised-dive.000webhostapp.com/SDS_serverCodes/sdseventgallery.json";
 RequestQueue requestQueue;
 
@@ -43,12 +57,10 @@ RequestQueue requestQueue;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_gallery);
+        actionBar=getSupportActionBar();
+        actionBar.setTitle("Event Gallery");
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
-
-
-        Toolbar tToolBar = (Toolbar)findViewById(R.id.toolbar);
-        TextView textView = (TextView)findViewById(R.id.toolbarTextView);
-        textView.setText("Event Gallery");
         listView = (ListView) findViewById(R.id.list);
 
         feedItems = new ArrayList<FeedItem>();
@@ -56,9 +68,10 @@ RequestQueue requestQueue;
         listAdapter = new FeedListAdapter(this, feedItems);
 
         listView.setAdapter(listAdapter);
-        Toast.makeText(getApplicationContext(), ("Loading Data Please wait......"), Toast.LENGTH_LONG).show();
 
         final ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        Sprite doubleBounce = new Circle();
+        progressBar.setIndeterminateDrawable(doubleBounce);
         progressBar.setVisibility(View.VISIBLE);
             // making fresh volley request and getting json
             final JsonObjectRequest jsonReq = new JsonObjectRequest(Method.GET,
@@ -89,7 +102,16 @@ RequestQueue requestQueue;
 
 
 
-
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        if(item.getItemId()==android.R.id.home)
+        {
+            onBackPressed();
+            return true;
+        }
+        return false;
+    }
 
 
 
